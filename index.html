@@ -49,7 +49,7 @@ html,body{overflow-x:hidden}
 @keyframes logo{0%{opacity:0;transform:scale(.7);letter-spacing:14px}35%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1.08)}}
 .ip i{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--n);box-shadow:0 0 8px var(--n);opacity:0;left:var(--x);top:var(--y);animation:pt 2s ease-out infinite}@keyframes pt{0%{opacity:0;transform:translateY(0)}30%{opacity:.9}100%{opacity:0;transform:translateY(-70px)}}
 .skip{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);min-height:46px;padding:0 22px;border-radius:99px;border:1px solid var(--b);background:#ffffff0d;color:var(--m);font-weight:700}
-.cel,.wel{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));background:radial-gradient(520px 420px at 50% 40%,#0e3a4fee,#050710f5 75%);animation:fi .35s;overflow:auto}.cel.out,.wel.out{opacity:0;transition:opacity .35s}
+.cel,.wel{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));background:radial-gradient(520px 420px at 50% 40%,#0c3246fa,#04060ffc 75%);animation:fi .35s;overflow:auto}.cel.out,.wel.out{opacity:0;transition:opacity .35s}
 .cc{max-width:360px;width:100%}.c1{font-size:clamp(26px,9vw,34px);font-weight:900;letter-spacing:1px;margin:10px 0;animation:up .6s .5s both}.c2{animation:up .6s .8s both;margin:6px 0}.c3{margin:14px 0;font-size:16px;animation:up .6s .9s both}.c4{color:var(--n);font-weight:800;margin:10px 0;animation:up .6s 1.2s both}.cc .bar{animation:up .6s .9s both;margin-top:8px}.cel .btn{animation:up .6s 1.5s both}
 .ck{width:96px;height:96px;filter:drop-shadow(0 0 16px #3dff9a)}.ck circle{fill:none;stroke:var(--g);stroke-width:2.5;stroke-dasharray:151;stroke-dashoffset:151;animation:dr .6s .1s forwards}.ck path{fill:none;stroke:var(--g);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:50;stroke-dashoffset:50;animation:dr .4s .6s forwards}
 @keyframes dr{to{stroke-dashoffset:0}}@keyframes up{from{opacity:0;transform:translateY(14px)}}@keyframes fillup{from{width:0}}
@@ -61,6 +61,33 @@ html,body{overflow-x:hidden}
 .toast{position:fixed;left:12px;right:12px;top:calc(12px + env(safe-area-inset-top,0px));max-width:406px;margin:0 auto;z-index:70;background:linear-gradient(135deg,#1a1440f5,#0c2a3ff5);border:1px solid #ffd24aaa;border-radius:18px;padding:14px 16px;box-shadow:0 0 30px #ffd24a44;animation:tin .45s cubic-bezier(.2,.9,.3,1.2) both}.toast.out{animation:tout .4s forwards}.toast .btn{min-height:44px;margin:8px 0 0;font-size:12px}
 @keyframes tin{from{opacity:0;transform:translateY(-30px) scale(.96)}}@keyframes tout{to{opacity:0;transform:translateY(-30px)}}.tk{font-size:11px;letter-spacing:2px;color:#ffd24a;font-weight:800}
 nav:empty{display:none}.pc.add .pa{border-radius:50%;width:80px;height:80px}.il{font-size:clamp(30px,9.5vw,46px)}
+/* ===== v5 cinematic ===== */
+#intro{--k:1;background:#000}#intro.fast{--k:.68}
+.iamb{position:absolute;inset:-20%;background:radial-gradient(45% 35% at 50% 50%,#0a2b55aa,transparent 70%),radial-gradient(30% 25% at 62% 56%,#3b1a6e66,transparent 70%);opacity:0;animation:amb calc(2.4s*var(--k)) ease-out forwards}
+@keyframes amb{0%{opacity:0}35%{opacity:.5}100%{opacity:1;transform:scale(1.15)}}
+.iline{position:absolute;left:10%;right:10%;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,#22e6ff,#a56bff,transparent);box-shadow:0 0 18px 2px #22e6ff99;transform:scaleX(0);opacity:0;animation:iline calc(1.3s*var(--k)) cubic-bezier(.6,0,.2,1) calc(.2s*var(--k)) forwards}
+@keyframes iline{0%{transform:scaleX(0);opacity:0}15%{opacity:1}75%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1.06);opacity:0}}
+#intro .il{position:relative;opacity:0;filter:blur(14px);letter-spacing:.38em;transform:scale(1.08);font-size:clamp(30px,9.5vw,50px);animation:reveal calc(1s*var(--k)) cubic-bezier(.2,.7,.1,1) calc(.55s*var(--k)) forwards}
+@keyframes reveal{0%{opacity:0;filter:blur(14px);letter-spacing:.38em;transform:scale(1.08)}60%{opacity:1;filter:blur(1.5px) drop-shadow(0 0 26px #22e6ffaa)}100%{opacity:1;filter:blur(0) drop-shadow(0 0 20px #22e6ff88);letter-spacing:.14em;transform:scale(1)}}
+.iflash{position:absolute;left:50%;top:50%;width:140vmax;height:140vmax;margin:-70vmax 0 0 -70vmax;border-radius:50%;background:radial-gradient(circle,#22e6ff44,#a56bff1c 30%,transparent 55%);opacity:0;transform:scale(.15);animation:flash calc(1s*var(--k)) ease-out calc(1.45s*var(--k)) forwards;pointer-events:none}
+@keyframes flash{0%{opacity:0;transform:scale(.15)}25%{opacity:1}100%{opacity:0;transform:scale(.7)}}
+#intro .isub{opacity:0;font-size:11px;letter-spacing:.32em;text-align:center;padding:0 14px;animation:up calc(.6s*var(--k)) ease-out calc(1.25s*var(--k)) forwards}
+.tag2{text-align:center;font-size:10px;letter-spacing:.28em;color:var(--m);margin-top:4px}
+.vc,.vb{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:66px;width:46px;height:46px;border-radius:14px;border:1px solid var(--b);background:var(--c);color:var(--t);font-size:18px;z-index:5}.wel .vb{position:absolute;right:12px;z-index:3}
+.pf h1{font-size:clamp(26px,8vw,44px);letter-spacing:.06em;line-height:1.1;margin:18px 0 6px}
+.wide{max-width:1000px}.pf{padding-top:58px}.pgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:26px 10px;margin-top:26px}
+.pc{background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;min-height:0;width:98px;padding:6px 0;border-radius:22px;gap:6px}.pc.last{box-shadow:none}.pc.last b{color:var(--n)}
+.rg{width:98px;height:98px}.rg .pa{width:84px;height:84px;font-size:42px}.pc.add .pa{width:98px;height:98px;background:#ffffff0a;border:2px dashed #22e6ff55;font-size:44px}
+.pc:focus-visible{outline:2px solid var(--n);outline-offset:4px}.pc:hover .rg{filter:drop-shadow(0 0 14px #22e6ff88);transform:scale(1.04)}.rg{transition:transform .35s,filter .35s}
+.pc.sel{transform:scale(1.12);z-index:2}.pc.sel .rg{animation:selglow .9s ease-out forwards}.pc.dim{opacity:.18;transform:scale(.9);filter:blur(1.5px)}
+@keyframes selglow{to{box-shadow:0 0 0 10px #22e6ff22,0 0 60px 14px #22e6ff88}}
+.pf.entering::before{background:radial-gradient(420px 380px at 50% 45%,#22e6ff2a,transparent),#000000b0;transition:opacity .8s}
+@media (min-width:700px){.pc{width:150px}.rg{width:148px;height:148px}.rg .pa{width:130px;height:130px;font-size:64px}.pc.add .pa{width:148px;height:148px;font-size:56px}.pc b{font-size:17px}.pgrid{gap:34px 22px}}
+.wel .pa.big{animation:pop .6s .1s both,glw 1.6s .7s ease-in-out infinite alternate}
+.wel .w1{animation:up .7s .5s both}.wel .w2{animation:up .7s .85s both}.wel .w3{animation:up .7s 1.2s both}.wst{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px auto 0;max-width:340px;animation:up .7s 1.5s both}
+.wst div{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:10px 4px}.wst b{display:block;font-size:20px;color:var(--n)}.wst small{font-size:9px;letter-spacing:1.5px;color:var(--m)}
+.wel .btn{animation:up .7s 2s both}
+@media (prefers-reduced-motion:reduce){.iline,.iflash,.iamb,.ip{display:none}#intro .il{opacity:1;filter:none;letter-spacing:.14em;transform:none;animation:none}#intro .isub{opacity:1;animation:none}.pc.sel{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hun .s1{display:none}.ip{display:none}}
 </style></head><body><div id="app"></div><nav id="nav"></nav>
 <script>
@@ -130,7 +157,7 @@ let view='profiles',arg=null,FA=true;const V={};
 function go(v,a){view=v;arg=a||null;FA=true;try{history.replaceState(null,'','#'+v+(a?'/'+a:''));localStorage.setItem(KEY+'-view',v+'/'+(a||''))}catch(e){}render();scrollTo(0,0)}
 function render(){const nv=[['home','🏠','Home'],['days','📅','100 Days'],['asg','📚','Assignments'],['rev','🧠','Revision'],['ach','🏆','Achievements']];
  $('#nav').innerHTML=(view=='profiles'||view=='verify')?'':nv.map(n=>`<button class="${view==n[0]||(view=='day'&&n[0]=='days')?'on':''}" data-a="go" data-v="${n[0]}"><b>${n[1]}</b>${n[2]}</button>`).join('');
- $('#app').innerHTML='<div class="'+(FA?'fade':'')+'">'+(V[view]||V.home)()+'</div>';FA=false}
+ {const ap=$('#app');if(ap.classList)ap.classList.toggle('wide',view=='profiles')}$('#app').innerHTML='<div class="'+(FA?'fade':'')+'">'+(V[view]||V.home)()+'</div>';FA=false}
 const hdr=()=>`<div class="top"><div><div class="brand">DSA GRIND 🔥</div><div class="sub">100 Days. One Goal. Placement Ready.</div></div><div class="row" style="flex:none"><button class="ib" data-a="go" data-v="search">🔍</button><button class="ib" data-a="go" data-v="settings">⚙️</button></div></div><button class="chip" data-a="pmenu">${esc(curAv())} ${esc(S.name.toUpperCase())} ▾</button>`;
 const bar=p=>`<div class="bar"><i style="width:${p}%"></i></div>`;
 V.home=()=>{const o=all(),s=streak(),c=Math.min(100,S.cur),d=D[c-1],p=dp(c),R=88,C=2*Math.PI*R;
@@ -158,7 +185,7 @@ V.ach=()=>{const u=unlocked();return hdr()+`<h3 style="margin:14px 0 0">🏆 ACH
 V.search=()=>{const q=(S.sq||'').toLowerCase().trim();let r=[];if(q)D.forEach(d=>{const n=d.n,a=A[d.a],nt=S.notes[n]||{};
  const hay=[['Day','day '+n],['Assignment',a[0]],['Lecture',a[3].map(l=>l[0]).join(' ')],['Question',tasks(n).filter(x=>x.q).map(x=>x.t).join(' ')],['Note',nt.n||''],['Mistake',nt.m||'']];const h=hay.find(x=>x[1].toLowerCase().includes(q));if(h)r.push([n,a[0],h[0]])});
  return hdr()+`<input type="search" id="q" placeholder="Search day, topic, problem, notes…" value="${esc(S.sq||'')}" style="margin-top:12px">${r.slice(0,40).map(x=>`<div class="card" data-a="go" data-v="day" data-n="${x[0]}"><b>Day ${x[0]}</b> · ${esc(x[1])} <span class="tag">${x[2]}</span></div>`).join('')}`};
-V.settings=()=>hdr()+`<h3 style="margin:14px 0">⚙️ SETTINGS</h3><div class="card sub">Last saved: ${lastSaved()}</div><div class="card"><div class="sub">Profile: ${esc(S.name)} (name on certificate)</div><button class="btn" data-a="pmanage">👥 Manage Profiles</button><button class="btn" data-a="exp">⚙️ Export Progress</button><button class="btn" data-a="imp">📥 Import Progress</button><button class="btn" data-a="snd">🔊 Sound: ${soundOn()?'ON':'OFF'}</button><button class="btn" data-a="bk">💾 Backup Now</button><button class="btn" data-a="rs">♻️ Restore Backup</button><button class="btn" data-a="go" data-v="cert">🎓 Certificate</button><button class="btn" style="border-color:#ff4d6d" data-a="reset">Reset Progress</button></div><div class="card sub">Lectures come from Kunal Kushwaha's SYLLABUS.md. Assignment 01 links to its exact file; the rest open the assignments folder and you add each assignment's questions per day. Data is saved on this device only.</div>`;
+V.settings=()=>hdr()+`<h3 style="margin:14px 0">⚙️ SETTINGS</h3><div class="card sub">Last saved: ${lastSaved()}</div><div class="card"><div class="sub">Profile: ${esc(S.name)} (name on certificate)</div><button class="btn" data-a="pmanage">👥 Manage Profiles</button><button class="btn" data-a="exp">⚙️ Export Progress</button><button class="btn" data-a="imp">📥 Import Progress</button><button class="btn" data-a="snd">🔊 Sound: ${soundOn()?'ON':'OFF'}</button><button class="btn" data-a="vtog">🗣 Spoken welcome: ${voiceOn()?'ON':'OFF'}</button><button class="btn" data-a="bk">💾 Backup Now</button><button class="btn" data-a="rs">♻️ Restore Backup</button><button class="btn" data-a="go" data-v="cert">🎓 Certificate</button><button class="btn" style="border-color:#ff4d6d" data-a="reset">Reset Progress</button></div><div class="card sub">Lectures come from Kunal Kushwaha's SYLLABUS.md. Assignment 01 links to its exact file; the rest open the assignments folder and you add each assignment's questions per day. Data is saved on this device only.</div>`;
 function save2(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove()}
 const X=s=>esc(s).replace(/'/g,'&#39;');
 function certSVG(c){const T=(y,sz,t,o='')=>`<text x="550" y="${y}" text-anchor="middle" font-family="Georgia,serif" font-size="${sz}" ${o}>${t}</text>`;
@@ -186,9 +213,10 @@ const curAv=()=>REG&&ACT&&REG.profiles[ACT]?REG.profiles[ACT].avatar:AV[0];
 const hue=id=>{let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))%360;return h};
 function loadReg(){let r=null;try{r=JSON.parse(lsGet(RK))}catch(e){}
  if(!r||!r.profiles||!Array.isArray(r.order)||!r.order.length){ // first run of profile system: existing data becomes VISHWAS
-  r={v:1,last:null,order:['p1'],profiles:{p1:{name:'Vishwas',avatar:AV[0],created:now().toISOString()}}};
+  r={v:1,nk:1,last:null,order:['p1'],profiles:{p1:{name:'Vishwas K',avatar:AV[0],created:now().toISOString()}}};
   const leg=lsGet(LEG);if(leg&&!lsGet(PK+'p1')){lsSet(PK+'p1',leg);const bk=lsGet(LEG+'-bk');if(bk)lsSet(PK+'p1-bk',bk)}
   REG=r;saveReg()}
+ if(!r.nk){r.nk=1;const q=r.profiles.p1;if(q&&/^vishwas$/i.test(String(q.name||'').trim()))q.name='Vishwas K';REG=r;saveReg()}
  return r}
 function flush(){if(KEY)lsSet(KEY,JSON.stringify(S))}
 function loadProfile(id){flush();ACT=id;KEY=PK+id;let o=null;try{o=JSON.parse(lsGet(KEY))}catch(e){}
@@ -217,17 +245,35 @@ function importAll(j){if(!j||!Array.isArray(j.profiles)||j.profiles.length<1||j.
  REG=r;if(j.last&&r.profiles[j.last])REG.last=j.last;saveReg();ACT=null;KEY=null;S=fresh();try{sessionStorage.removeItem('dsa-active')}catch(e){}return true}
 function pStat(id){let o=null;try{o=id===ACT?S:JSON.parse(lsGet(PK+id))}catch(e){}o=o||{};const d=Object.keys(o.done||{}).length;let c=1;while(c<100&&(o.done||{})[c])c++;return d?`Day ${c} · ${d}/100 days`:'Day 1 · fresh start'}
 V.profiles=()=>{const r=REG,n=r.order.length,last=r.last&&r.profiles[r.last];
- return `<div class="pf fade"><button class="snd" data-a="snd" style="z-index:5">${soundOn()?'🔊':'🔇'}</button><div class="brand" style="text-align:center">DSA GRIND 🔥</div>${last?`<div class="sub" style="text-align:center;margin-top:10px">WELCOME BACK<br><b style="color:var(--n);font-size:18px">${esc(last.name.toUpperCase())}</b></div>`:''}<h1>WHO'S GRINDING TODAY?</h1><p class="sub" style="text-align:center;margin:0">Choose your profile to continue your DSA journey.</p>
+ return `<div class="pf fade"><button class="snd" data-a="snd" style="z-index:5">${soundOn()?'🔊':'🔇'}</button><button class="vc" data-a="vtog" aria-label="Spoken welcome on/off">${voiceOn()?'🗣':'🤫'}</button><div class="brand" style="text-align:center">DSA GRIND</div><div class="tag2">100-DAY JAVA + DSA PLACEMENT JOURNEY</div>${last?`<div class="sub" style="text-align:center;margin-top:10px">WELCOME BACK<br><b style="color:var(--n);font-size:18px">${esc(last.name.toUpperCase())}</b></div>`:''}<h1>WHO'S GRINDING TODAY?</h1><p class="sub" style="text-align:center;margin:0">Choose your profile</p>
  <div class="pgrid">${r.order.map(id=>{const q=r.profiles[id],i=pInfo(id);return `<button class="pc ${id===r.last?'last':''}" data-a="pick" data-id="${id}" style="--h:${hue(id)};--h2:${(hue(id)+60)%360}"><span class="rg" style="--p:${i.p}"><span class="pa">${q.avatar}</span></span><b>${esc(q.name.toUpperCase())}</b><small>DAY ${i.day}</small><small>${i.p}% COMPLETE</small></button>`}).join('')}${n<5?'<button class="pc add" data-a="padd"><span class="pa">＋</span><b>ADD PROFILE</b></button>':''}</div>
  <div class="sub" style="text-align:center;margin:16px">${n}/5 profiles</div><button class="btn sm" data-a="pmanage">👥 Manage Profiles</button></div>`};
 const RM=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}};
 // ---- sound: original Web Audio synth, no assets; only plays once the browser allows audio (after first tap) ----
 let AC=null;const soundOn=()=>lsGet('dsa-grind-sound')!=='off';
 function ac(){try{if(!AC){const C=globalThis.AudioContext||globalThis.webkitAudioContext;if(!C)return null;AC=new C()}if(AC.state==='suspended'){const r=AC.resume();if(r&&r.catch)r.catch(()=>{})}return AC}catch(e){return null}}
-function note(f,t0,d,type,v,f2){const a=AC,T=a.currentTime+t0,o=a.createOscillator(),g=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,T);if(f2)o.frequency.exponentialRampToValueAtTime(f2,T+d);g.gain.setValueAtTime(0.0001,T);g.gain.linearRampToValueAtTime(v||.04,T+.02);g.gain.exponentialRampToValueAtTime(0.0001,T+d);o.connect(g);g.connect(a.destination);o.start(T);o.stop(T+d+.05)}
-const SFX={start:()=>{note(110,0,1,'sine',.05,220);note(330,.1,.9,'triangle',.025,660);note(660,.35,.8,'sine',.02,990)},pick:()=>{note(520,0,.12,'sine',.04,780)},enter:()=>{note(392,0,.18,'sine',.04);note(587,.1,.3,'triangle',.035)},
- day:()=>[523,659,784,1047].forEach((f,i)=>note(f,i*.09,.35,'triangle',.04)),badge:()=>{note(880,0,.4,'sine',.04);note(1320,.12,.5,'sine',.03);note(1760,.24,.6,'sine',.02)},
- hundred:()=>{[392,523,659,784,1047,1319].forEach((f,i)=>note(f,i*.12,.7,'triangle',.045));note(196,0,1.6,'sine',.05)}};
+let IK=1;const voiceOn=()=>lsGet('dsa-grind-voice')!=='off';
+function bus(){const a=AC;if(a._b)return a._b;const g=a.createGain();g.gain.value=.85;try{const c=a.createDynamicsCompressor();c.threshold.value=-20;c.knee.value=12;c.ratio.value=6;c.attack.value=.005;c.release.value=.25;g.connect(c);c.connect(a.destination)}catch(e){g.connect(a.destination)}return a._b=g}
+function nz(){const a=AC;if(a._n)return a._n;const n=Math.floor(a.sampleRate*2),b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<n;i++){const w=Math.random()*2-1;l=(l+.02*w)/1.02;d[i]=w*.5+l*3.5}return a._n=b}
+function VO(type,f,f2,t0,dur,vol,att,rel,lp,det){const a=AC,T=a.currentTime+t0,o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.setValueAtTime(f,T);if(f2&&f2!==f)o.frequency.exponentialRampToValueAtTime(f2,T+dur);if(det)o.detune.value=det;let n=o;
+ if(lp){const l=a.createBiquadFilter();l.type='lowpass';l.Q.value=.7;l.frequency.setValueAtTime(lp[0],T);l.frequency.exponentialRampToValueAtTime(lp[1],T+dur);o.connect(l);n=l}
+ g.gain.setValueAtTime(.0001,T);g.gain.exponentialRampToValueAtTime(vol,T+att);g.gain.setValueAtTime(vol,T+Math.max(att,dur-rel));g.gain.exponentialRampToValueAtTime(.0001,T+dur);n.connect(g);g.connect(bus());o.start(T);o.stop(T+dur+.05)}
+function N(t0,dur,vol,ft,f1,f2,q,att,rel){const a=AC,T=a.currentTime+t0,s=a.createBufferSource(),g=a.createGain(),f=a.createBiquadFilter();s.buffer=nz();s.loop=true;f.type=ft;f.Q.value=q||1;f.frequency.setValueAtTime(f1,T);f.frequency.exponentialRampToValueAtTime(f2,T+dur);
+ g.gain.setValueAtTime(.0001,T);g.gain.exponentialRampToValueAtTime(vol,T+att);g.gain.setValueAtTime(vol,T+Math.max(att,dur-rel));g.gain.exponentialRampToValueAtTime(.0001,T+dur);s.connect(f);f.connect(g);g.connect(bus());s.start(T);s.stop(T+dur+.05)}
+// Original sound design (synthesised): ambience + rising whoosh + electronic swell + sub impact + shimmer
+const SFX={
+ start:()=>{const k=IK;VO('sine',55,55,0,2.5*k,.12,.9*k,.8*k);VO('triangle',82.4,82.4,0,2.5*k,.05,k,.8*k,[160,420]);N(.2*k,1.3*k,.1,'bandpass',260,5200,1.1,.95*k,.2*k);
+  [110,164.8,220].forEach((f,i)=>VO('sawtooth',f,f,.15*k,1.4*k,.03,1.1*k,.15*k,[240,2600],i*6-6));
+  VO('sine',98,36,1.5*k,.95,.3,.006,.9);N(1.5*k,.3,.14,'lowpass',900,120,.7,.004,.25);[880,1320,1760].forEach((f,i)=>VO('triangle',f,f,1.5*k,1,.028-i*.007,.01,.95));N(1.5*k,.7,.05,'highpass',7000,2500,.7,.005,.6)},
+ pick:()=>{VO('sine',150,55,0,.4,.16,.005,.35);N(0,.4,.06,'bandpass',500,2600,1.2,.05,.3);VO('triangle',740,740,.05,.5,.02,.01,.45)},
+ enter:()=>{[146.8,220,293.7,370].forEach((f,i)=>VO(i%2?'triangle':'sine',f,f,i*.05,1.9,.032,.6,.9,[300,1700]));N(0,1.2,.04,'bandpass',300,3000,.9,.6,.4);VO('sine',73.4,73.4,0,1.9,.06,.5,.9)},
+ day:()=>{N(0,.7,.06,'bandpass',300,3800,1,.55,.15);[110,165,220].forEach(f=>VO('sawtooth',f,f,0,.9,.02,.6,.2,[250,2200]));VO('sine',80,40,.6,.8,.24,.006,.7);[[523.3,.6],[784,.72],[1046.5,.84]].forEach(([f,t],i)=>VO('sine',f,f,t,1.2,.045-i*.008,.01,1.1))},
+ badge:()=>{N(0,.6,.05,'bandpass',1500,7500,1.5,.35,.2);[[880,.35],[1318.5,.47],[1760,.59]].forEach(([f,t],i)=>{VO('sine',f,f,t,1.3,.04-i*.008,.008,1.2);VO('sine',f*2.01,f*2.01,t,.6,.008,.005,.55)});VO('sine',220,220,.3,1.4,.03,.3,1);VO('sine',330,330,.3,1.4,.02,.3,1)},
+ hundred:()=>{VO('sine',55,55,0,4,.13,1.4,1.2);N(0,2.2,.12,'bandpass',200,6000,1,1.9,.25);[110,165,220,330].forEach((f,i)=>VO('sawtooth',f,f,0,2.3,.028,1.9,.3,[220,3000],i*5-8));VO('sine',96,34,2.2,1.6,.34,.006,1.5);N(2.2,.4,.16,'lowpass',1000,100,.7,.004,.35);
+  [523.3,659.3,784,1046.5,1318.5].forEach((f,i)=>VO('triangle',f,f,2.2+i*.06,1.7,.03,.01,1.6,[3200,900]));N(2.2,1.1,.05,'highpass',8000,2500,.7,.005,1)}};
+// ---- spoken welcome (SpeechSynthesis) ----
+function pickVoice(){try{const vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));if(!vs.length)return null;const P=[/natural|neural|online/i,/google (uk|us) english/i,/samantha|daniel|serena|karen|moira|aaron|ava|allison|libby|sonia/i];for(const r of P){const v=vs.find(x=>r.test(x.name));if(v)return v}return vs.find(v=>/en[-_](gb|us|in|au)/i.test(v.lang))||vs[0]}catch(e){return null}}
+function speak(t){if(!voiceOn())return;try{const ss=globalThis.speechSynthesis;if(!ss||!globalThis.SpeechSynthesisUtterance)return;ss.cancel();const u=new SpeechSynthesisUtterance(t),v=pickVoice();try{if(v){u.voice=v;u.lang=v.lang}else u.lang='en-US'}catch(e){u.lang='en-US'}u.rate=.92;u.pitch=.95;u.volume=1;ss.speak(u)}catch(e){}}
 function play(n){if(!soundOn())return;const a=ac();if(!a||a.state!=='running')return;try{SFX[n]()}catch(e){}}
 // ---- toasts (achievement popups) ----
 const TQ=[];let TB=false;
@@ -237,9 +283,9 @@ function badgeToasts(nu){nu.forEach(b=>{const x=BD.find(y=>y[1]==b);if(x){play('
 // ---- intro ----
 let INTRO=null;
 function endIntro(){const o=INTRO;if(!o)return;INTRO=null;if(o.classList)o.classList.add('out');setTimeout(()=>o.remove(),420);try{sessionStorage.setItem('dsa-intro','1')}catch(e){}lsSet('dsa-intro-seen','1')}
-function intro(){let ss=null;try{ss=sessionStorage.getItem('dsa-intro')}catch(e){}if(ss||view=='verify')return;const first=!lsGet('dsa-intro-seen'),ms=RM()?700:first?2300:1100;globalThis.__introMs=ms;
- const o=document.createElement('div');o.id='intro';let ps='';for(let i=0;i<16;i++)ps+=`<i style="--x:${Math.round(10+Math.random()*80)}%;--y:${Math.round(35+Math.random()*30)}%;animation-delay:${(Math.random()*1.4).toFixed(2)}s"></i>`;
- o.innerHTML=`<div class="ip">${ps}</div><div class="il">DSA GRIND</div><div class="isub">100 DAYS · ONE GOAL</div><button class="snd" data-a="snd">${soundOn()?'🔊':'🔇'}</button><button class="skip" data-a="skip">Skip ▸</button>`;
+function intro(){let ss=null;try{ss=sessionStorage.getItem('dsa-intro')}catch(e){}if(ss||view=='verify')return;const first=!lsGet('dsa-intro-seen'),rm=RM(),ms=rm?700:first?2100:1450;globalThis.__introMs=ms;IK=first?1:.68;
+ const o=document.createElement('div');o.id='intro';if(!first&&o.classList)o.classList.add('fast');let ps='';for(let i=0;i<18;i++)ps+=`<i style="--x:${Math.round(8+Math.random()*84)}%;--y:${Math.round(30+Math.random()*40)}%;animation-delay:${(Math.random()*1.2).toFixed(2)}s"></i>`;
+ o.innerHTML=`<div class="iamb"></div><div class="ip">${ps}</div><div class="iline"></div><div class="iflash"></div><div class="il">DSA GRIND</div><div class="isub">100-DAY JAVA + DSA PLACEMENT JOURNEY</div><button class="snd" data-a="snd" aria-label="Sound on/off">${soundOn()?'🔊':'🔇'}</button><button class="skip" data-a="skip">Skip ▸</button>`;
  document.body.appendChild(o);INTRO=o;play('start');setTimeout(endIntro,ms)}
 // ---- profile enter + welcome ----
 let ENT=false,WT=0;
@@ -248,11 +294,14 @@ function pInfo(id){let o=null;try{o=id===ACT?S:JSON.parse(lsGet(PK+id))}catch(e)
  let cur=1;while(cur<100&&done[cur])cur++;return{day:cur,p:Math.round(100*c/t),d:Object.keys(done).length}}
 function enter(id,anim){ENT=true;play('pick');
  const fin=()=>{if(id!==ACT)loadProfile(id);closeOv();ENT=false;go('home');showWelcome()};
- if(anim){document.querySelectorAll('.pc').forEach(e=>e.classList&&e.classList.add(e.dataset.id===id?'sel':'dim'));const pf=document.querySelector('.pf');if(pf&&pf.classList)pf.classList.add('entering');setTimeout(fin,RM()?120:700)}else fin()}
-function showWelcome(){const nw=Object.keys(S.tasks).filter(k=>S.tasks[k]).length===0&&!doneN().length,c=firstOpen(),st=streak(),o=document.createElement('div');o.className='wel';o.style.cssText='--h:'+hue(ACT||'p1');
- o.innerHTML=`<div class="cc"><span class="pa big">${esc(curAv())}</span><div class="w1">${nw?'WELCOME TO DSA GRIND':'WELCOME BACK,'}</div><div class="w2">${esc(S.name.toUpperCase())}</div><div class="w3">${nw?'YOUR 100-DAY JOURNEY STARTS NOW.':'DAY '+c+' IS READY.'}</div>${nw?'':`<div class="w4">${st.n?'🔥 '+st.n+' DAY STREAK · ':''}YOUR GRIND CONTINUES.</div>`}<button class="btn go" data-a="wcont" data-n="${nw?1:0}">${nw?'START DAY 1':'CONTINUE'}</button>${nw?'':'<div class="wbar"><i></i></div>'}</div>`;
- document.body.appendChild(o);play('enter');if(!nw)WT=setTimeout(dismissWelcome,RM()?1200:3200)}
-function dismissWelcome(){clearTimeout(WT);document.querySelectorAll('.wel').forEach(x=>{x.classList&&x.classList.add('out');setTimeout(()=>x.remove(),350)})}
+ if(anim){document.querySelectorAll('.pc').forEach(e=>e.classList&&e.classList.add(e.dataset.id===id?'sel':'dim'));const pf=document.querySelector('.pf');if(pf&&pf.classList)pf.classList.add('entering');setTimeout(fin,RM()?120:900)}else fin()}
+let SPT=0;
+function showWelcome(){const nw=Object.keys(S.tasks).filter(k=>S.tasks[k]).length===0&&!doneN().length,c=firstOpen(),st=streak(),pc=all().p,o=document.createElement('div');o.className='wel';o.style.cssText='--h:'+hue(ACT||'p1');
+ const say=nw?'Welcome to DSA Grind. Your 100-day journey starts now.':`Welcome back, ${S.name}. Your DSA Grind continues. Day ${c} is ready.`;
+ o.innerHTML=`<button class="vb" data-a="vtog" aria-label="Spoken welcome on/off">${voiceOn()?'🗣':'🤫'}</button><div class="cc"><span class="pa big">${esc(curAv())}</span><div class="w1">${nw?'WELCOME TO DSA GRIND':'WELCOME BACK'}</div><div class="w2">${esc(S.name.toUpperCase())}</div><div class="w3">${nw?'YOUR 100-DAY JOURNEY STARTS NOW.':'DAY '+c+' IS READY'}</div><div class="wst"><div><b>${c}</b><small>DAY</small></div><div><b>${st.n}🔥</b><small>STREAK</small></div><div><b>${pc}%</b><small>COMPLETE</small></div></div><button class="btn go" data-a="wcont" data-n="${nw?1:0}">${nw?'START DAY 1':'CONTINUE'}</button></div>`;
+ document.body.appendChild(o);play('enter');const b=o.querySelector&&o.querySelector('.btn');if(b&&b.focus)setTimeout(()=>b.focus(),RM()?0:2000);
+ clearTimeout(SPT);SPT=setTimeout(()=>speak(say),RM()?150:1000)}
+function dismissWelcome(){clearTimeout(WT);clearTimeout(SPT);try{speechSynthesis.cancel()}catch(e){}document.querySelectorAll('.wel').forEach(x=>{x.classList&&x.classList.add('out');setTimeout(()=>x.remove(),350)})}
 // ---- celebrations ----
 function celebrate(n,nu,s){const o=document.createElement('div'),p=all().p;o.className='cel';
  o.innerHTML=`<div class="cc"><svg class="ck" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg><div class="c1">DAY ${n}<br>COMPLETED ✓</div><div class="c2 sub">${dmsg(n).split('\n').slice(1).map(esc).join('<br>')}</div><div class="c3">+1 DAY<br><b>STREAK: ${s.n} DAY${s.n>1?'S':''} 🔥</b></div><div class="bar"><i id="cbar" style="width:0%"></i></div><div class="sub" style="margin-top:6px">OVERALL ${p}%</div><div class="c4">NEXT: DAY ${n+1}</div><button class="btn go" data-a="ccont" data-n="${n+1}">CONTINUE TO DAY ${n+1}</button></div>`;
@@ -288,6 +337,7 @@ function onClick(e){const t=e.target.closest('[data-a]');if(!t)return;const a=t.
  else if(a=='dlcert')dlCert()
  else if(a=='pick'){const id=t.dataset.id;if(!REG.profiles[id]||ENT)return;enter(id,view=='profiles')}
  else if(a=='skip')endIntro()
+ else if(a=='vtog'){lsSet('dsa-grind-voice',voiceOn()?'off':'on');if(!voiceOn()){try{speechSynthesis.cancel()}catch(e){}}document.querySelectorAll('.vc,.vb').forEach(x=>x.textContent=voiceOn()?'🗣':'🤫');if(view=='settings')render()}
  else if(a=='snd'){lsSet('dsa-grind-sound',soundOn()?'off':'on');if(soundOn())play('pick');if(view=='settings'||view=='profiles')render();document.querySelectorAll('#intro .snd').forEach(x=>x.textContent=soundOn()?'🔊':'🔇')}
  else if(a=='wcont'){dismissWelcome();if(n)go('day','1')}
  else if(a=='ccont'){closeOv();go('day',String(n))}
@@ -310,7 +360,7 @@ function onInput(e){const t=e.target,n=t.dataset.n;
  if(t.dataset.f){S.notes[n]=S.notes[n]||{};if(t.dataset.f=='imp')S.notes[n].imp=t.checked;else S.notes[n][t.dataset.f]=t.value;save()}
  else if(t.id=='nm'){S.name=t.value.trim()||'Vishwas';save()}
  else if(t.id=='q'||t.id=='rq'){const k=t.id=='q'?'sq':'rq',p=t.selectionStart;S[k]=t.value;save();render();const i=$('#'+t.id);i.focus();i.setSelectionRange(p,p)}}
-if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('pointerdown',()=>{if(soundOn())ac()},{passive:true});document.addEventListener('click',onClick);document.addEventListener('input',onInput);
+if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('keydown',e=>{if(INTRO&&(e.key==='Escape'||e.key==='Enter'||e.key===' '))endIntro()});document.addEventListener('pointerdown',()=>{if(soundOn())ac()},{passive:true});document.addEventListener('click',onClick);document.addEventListener('input',onInput);
  document.addEventListener('change',e=>{if(e.target.id=='imf'){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('#im').value=r.result};r.readAsText(f)}});
  (function(){const h=location.hash.slice(1),i=h.indexOf('/'),v=i<0?h:h.slice(0,i);let sa=null;try{sa=sessionStorage.getItem('dsa-active')}catch(e){}
   if(v=='verify'){view=v;arg=h.slice(i+1)}

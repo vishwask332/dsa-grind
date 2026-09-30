@@ -26,3 +26,10 @@ Static site, no build step. Files: index.html, manifest.json, sw.js, icon-*.png,
 - Intro (~2.3 s first visit, ~1.1 s afterwards, skippable, shorter with Reduce Motion) → profile screen → welcome → dashboard.
 - Sounds are generated with Web Audio (no audio files, no external URLs) and only play after the first tap (browser autoplay rules). Toggle in Settings or the speaker button; the preference is saved separately from progress (`dsa-grind-sound`).
 - Achievements already earned before this update are treated as seen, so they won't pop up again.
+
+## Cinematic v5
+- First-visit intro ≈2.1 s (repeat visits ≈1.45 s, Reduce Motion ≈0.7 s), skippable (button / Esc / Enter / Space).
+- Sound: original synthesised sound design (ambient drone, rising whoosh, electronic swell, sub impact, shimmer); no audio files or external URLs. Plays only after the browser allows audio.
+- Spoken welcome uses the browser's SpeechSynthesis after a profile tap, once per selection. Toggle with the 🗣 button; stored as `dsa-grind-voice` (sound is `dsa-grind-sound`; both are separate from progress).
+- The original profile is displayed as "Vishwas K" (one-time rename in the profile registry; progress data is not touched).
+- Replace files in your repo root and push; Vercel redeploys. No build step, same architecture.
