@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>DSA GRIND 🔥</title><meta name="theme-color" content="#070912"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#070912;--c:rgba(255,255,255,.06);--b:rgba(120,240,255,.18);--t:#e8edff;--m:#8a93b8;--n:#22e6ff;--p:#a56bff;--g:#3dff9a;--o:#ff8a3d;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;background:radial-gradient(900px 500px at 80% -10%,#2a1b5c66,transparent),radial-gradient(700px 500px at -10% 30%,#0b3b5c66,transparent),var(--bg);color:var(--t);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:96px}
+#app{max-width:430px;margin:0 auto;padding:14px}h2,h3{margin:0}.mono{font-family:ui-monospace,Menlo,monospace}
+.card{background:var(--c);border:1px solid var(--b);border-radius:20px;padding:16px;margin:12px 0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.glow{border-color:#22e6ff77;box-shadow:0 0 22px #22e6ff2a}.top{display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:900;letter-spacing:1px;font-size:22px;background:linear-gradient(90deg,var(--n),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--m);font-size:13px}.ib{background:var(--c);border:1px solid var(--b);color:var(--t);border-radius:14px;width:46px;height:46px;font-size:18px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;border-radius:16px;border:1px solid var(--n);background:linear-gradient(90deg,#22e6ff22,#a56bff22);color:var(--t);font-weight:800;font-size:15px;text-decoration:none;margin:8px 0;padding:8px;text-align:center}
+.btn.yt{border-color:#ff4d6d;background:#ff4d6d1f}.btn.go{background:linear-gradient(90deg,var(--n),var(--p));color:#04121a;border:0}.btn.dis{opacity:.45}.btn.sm{min-height:46px;font-size:13px}.btn:disabled{opacity:.35}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stats .card{margin:0}.st{padding:14px}.st b{display:block;font-size:21px;color:var(--n)}.st span{font-size:10px;color:var(--m);letter-spacing:1px}
+.ring{position:relative;width:200px;height:200px;margin:8px auto}.ring svg{transform:rotate(-90deg)}.ring .v{position:absolute;inset:0;display:grid;place-items:center;font-size:44px;font-weight:900}
+.bar{height:12px;border-radius:9px;background:#ffffff14;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--n),var(--p));box-shadow:0 0 12px var(--n);transition:width .6s}
+.task{display:flex;gap:12px;align-items:center;min-height:52px;padding:8px 4px;border-bottom:1px solid #ffffff0f}.task input{width:26px;height:26px;accent-color:var(--g);flex:none}.task.d span{color:var(--m);text-decoration:line-through}.task a{margin-left:auto;color:var(--n);font-size:13px;text-decoration:none;white-space:nowrap;padding:12px 6px}
+textarea,input[type=text],input[type=search]{width:100%;background:#0009;border:1px solid var(--b);border-radius:14px;color:var(--t);padding:12px;font:inherit;margin:4px 0}textarea{min-height:130px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.cell{aspect-ratio:1;border-radius:14px;border:1px solid var(--b);background:#ffffff08;color:var(--t);font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;padding:0}.cell small{font-size:8px;font-weight:600;color:var(--m)}
+.l1{background:#22e6ff22}.l2{background:#22e6ff44}.l3{background:#22e6ff66}.l4{background:#22e6ff99;color:#001}.l5{background:linear-gradient(135deg,var(--g),var(--n));color:#001;box-shadow:0 0 14px #3dff9a66;animation:pop .5s}.l4 small,.l5 small{color:#023}.cell.today{outline:2px solid var(--o)}.cell.lock{opacity:.55}
+.badge{display:flex;gap:12px;align-items:center;padding:12px;border-radius:16px;border:1px solid #ffffff12;margin:8px 0;filter:grayscale(1);opacity:.5}.badge.on{filter:none;opacity:1;border-color:#ffd24a88;box-shadow:0 0 18px #ffd24a33}.badge em{font-size:28px;font-style:normal}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:9;background:#080b18f0;backdrop-filter:blur(16px);border-top:1px solid var(--b);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;background:none;border:0;color:var(--m);font-size:10px;min-height:54px;font-weight:700}nav button b{display:block;font-size:20px}nav .on{color:var(--n)}
+.tag{display:inline-block;padding:3px 9px;border-radius:99px;background:#a56bff33;font-size:11px;font-weight:700}.row{display:flex;gap:8px}.row>*{flex:1}
+.ov{position:fixed;inset:0;z-index:20;background:#000c;display:grid;place-items:center;padding:20px}.ov .card{background:#10142a;max-width:400px;width:100%;text-align:center;max-height:90vh;overflow:auto}
+.cf{position:fixed;top:-10px;width:8px;height:12px;z-index:30;animation:fall 2.4s ease-in forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.fade{animation:fi .35s}@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+label.chk{display:flex;gap:10px;align-items:center;min-height:44px}label.chk input{width:22px;height:22px;accent-color:var(--o)}
+@media print{nav,.noprint{display:none!important}body{background:#fff;padding:0}#app{max-width:none;padding:0}#certbox{margin:0}@page{size:landscape;margin:8mm}}
+#certbox svg{width:100%;height:auto;border-radius:10px;display:block;box-shadow:0 0 24px #0008}
+</style></head><body><div id="app"></div><nav id="nav"></nav>
+<script>
+const REPO='https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/',YT=id=>'https://youtu.be/'+id;
+// [name, days, verified file, lectures[[title,id]], badge]. Lectures from SYLLABUS.md; only 01's file name verified.
+const A=[
+["Flow of Program",1,"01-flow-of-program.md",[["Flow of the program","lhELGQAV4gg"]],"🧭 FLOW MASTER"],
+["First Java",3,0,[["Introduction to Java","4EP8YzcN0hQ"],["Input & Output in Java","TAtrPoaJ7gc"]],"🟢 JAVA STARTER"],
+["Conditionals & Loops",4,0,[["Conditionals & Loops","ldYLYRNaucM"],["Switch statements","mA23x39DjbI"]],"🔁 LOOP MASTER"],
+["Functions",4,0,[["Functions","vvanI8NRlSI"]],"🧩 FUNCTION MASTER"],
+["Arrays",5,0,[["Arrays","n60Dn0UsbEk"]],"🔵 ARRAY MASTER"],
+["Searching",5,0,[["Linear Search","_HRA37X8N_Q"],["Binary Search","f6UU7V3szVw"],["Binary Search on 2D Arrays","enI_KyGLYPo"]],"🟣 SEARCH MASTER"],
+["Sorting",6,0,[["Insertion Sort","By_5-RRqVeE"],["Selection Sort","Nd4SCCIHFWk"],["Bubble Sort","F5MZyqRp_IM"],["Cyclic Sort","JfinxytTYFQ"],["Count Sort","FOo820lJV1Y"],["Radix Sort","mLi6VQDqAOs"]],"🟠 SORTING MASTER"],
+["Strings",5,0,[["Strings","zL1DPZ0Ovlo"],["StringBuffer","YFZai3fPUQI"]],"🧵 STRING MASTER"],
+["Patterns",4,0,[["Pattern questions","lsOOs5J8ycw"]],"🎨 PATTERN MASTER"],
+["Recursion",14,0,[["Recursion Intro","M2uO2nMT0Bk"],["Merge Sort","iKGAgWdgoRk"],["Backtracking","zg5v2rlV1tM"],["N-Queens / Knights / Sudoku","nC1rbW2YSz0"],["Recursion String Problems","gdifkIwCJyg"],["Subsets / Google, Amazon Qs","9ByWqPzfXDU"],["Recursion Array Problems","sTdiMLom00U"],["Recursion Pattern Problems","ymgnIIclCF0"]],"♾️ RECURSION MASTER"],
+["Bitwise",4,0,[["Maths for DSA (Bitwise)","fzip9Aml6og"]],"🧮 BIT MASTER"],
+["Math",6,0,[["Prime, Sieve, HCF/LCM…","lmSpZ0bjCyQ"],["BigInteger & BigDecimal","lHtoypC-4Ps"]],"➗ MATH MASTER"],
+["Complexity",5,0,[["Space & Time Complexity","mV3wrLBbuuE"]],"⏱️ COMPLEXITY MASTER"],
+["OOP",11,0,[["OOP Intro","BSVKUk58K6U"],["OOP Properties","46T2wD3IuhM"],["Static, Packages, Singleton","_Ya6CN13t8k"],["Access Control, Object Class","W145DXs8fFg"],["Interfaces & Abstract Classes","rgHZa7-Dibg"],["Generics, Exceptions, Lambda","OY2lPr8h93U"],["Collections, Vector, Enums","9ogGan-R1pc"]],"🏗️ OOP MASTER"],
+["Linked List",7,0,[["Linked List Intro","58YbpRDc4yw"],["Fast/Slow, Cycle, Reversal","70tx7KcMROc"]],"🔗 LINKED LIST MASTER"],
+["Stack & Queue",5,0,[["Stacks & Queues","rHQI4mrJ3cg"],["Interview problems","S9LUYztYLu4"]],"📚 STACK MASTER"],
+["Trees",8,0,[["Trees Intro","4s1Tcvm00pA"],["Interview questions (DFS/BFS)","9D-vP-jcc-Y"],["AVL Trees","CVA85JuJEn0"]],"🌳 TREE MASTER"],
+["Heaps",3,0,[["Heaps Intro","Qf-TDPr0nYw"]],"⛰️ HEAP MASTER"]];
+const Q1=["Input a year and find whether it is a leap year or not.","Take two numbers and print the sum of both.","Take a number as input and print the multiplication table for it.","Take 2 numbers as inputs and find their HCF and LCM.","Keep taking numbers as inputs till the user enters ‘x’, after that print sum of all."];
+const STD=["Watch today's lecture","Understand the concepts","Complete assignment","Solve LeetCode / practice questions","Write / revise my Java code","Push code to GitHub"];
+const D=[];A.forEach((a,i)=>{for(let k=0;k<a[1];k++)D.push({n:D.length+1,a:i,k})});
+const aUrl=i=>A[i][2]?REPO+'blob/main/assignments/'+A[i][2]:REPO+'tree/main/assignments';
+const KEY='dsa-grind-v1',fresh=()=>({v:2,name:'Vishwas',tasks:{},custom:{},notes:{},done:{},cur:1,badges:[],saved:null,lastActive:null,cert:null});let S;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+S=Object.assign(fresh(),S||{});S.v=2;
+const now=()=>new Date(globalThis.__NOW||Date.now());
+const dstr=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const pd=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const fmt=s=>pd(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+const short=s=>pd(s).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+function firstOpen(){for(let i=1;i<=100;i++)if(!S.done[i])return i;return 100}
+S.cur=firstOpen();
+const lastSaved=()=>S.saved?new Date(S.saved).toLocaleString():'not yet';
+function autoBackup(force){try{const b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]'),l=b[0];if(force||!l||now()-new Date(l.t)>36e5){b.unshift({t:now().toISOString(),d:JSON.stringify(S)});localStorage.setItem(KEY+'-bk',JSON.stringify(b.slice(0,5)))}}catch(e){}}
+const save=()=>{try{S.saved=now().toISOString();S.lastActive=dstr(now());localStorage.setItem(KEY,JSON.stringify(S));autoBackup()}catch(e){}};
+const qDone=()=>Object.keys(S.tasks).filter(k=>S.tasks[k]&&/:[qc]\d+$/.test(k)).length;
+const asgDone=()=>A.filter((a,i)=>D.filter(d=>d.a==i).every(d=>S.done[d.n])).length;
+const h32=s=>{let h=5381;for(const c of s)h=((h*33)^c.charCodeAt(0))>>>0;return h.toString(36).toUpperCase().padStart(7,'0')};
+const certId=(name,date)=>'CERT-'+h32(name+'|'+date+'|100');
+function ensureCert(){if(Object.keys(S.done).length>=100&&!S.cert){const date=Object.values(S.done).sort().pop();S.cert={id:certId(S.name,date),name:S.name,date}}}
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function tasks(n){const d=D[n-1],t=[];STD.forEach((x,i)=>t.push({id:n+':s'+i,t:x}));
+ if(d.a==0)Q1.forEach((q,i)=>t.push({id:n+':q'+i,t:q,q:1}));
+ (S.custom[n]||[]).forEach((c,i)=>t.push({id:n+':c'+i,t:c.t,u:c.u,q:1,ci:i}));return t}
+const dp=n=>{const t=tasks(n),c=t.filter(x=>S.tasks[x.id]).length;return{c,t:t.length,p:Math.round(100*c/t.length)}};
+const sum=ds=>{let c=0,t=0;ds.forEach(d=>{const p=dp(d.n);c+=p.c;t+=p.t});return{c,t,p:Math.round(100*c/t)}};
+const all=()=>sum(D),aProg=i=>sum(D.filter(d=>d.a==i));
+const doneN=()=>Object.keys(S.done).map(Number).sort((a,b)=>a-b);
+function streak(){const ds=doneN();if(!ds.length)return{n:0,paused:false};const last=ds[ds.length-1];let n=1;while(S.done[last-n])n++;
+ return{n,paused:Math.round((pd(dstr(now()))-pd(S.done[last]))/864e5)>1}}
+const status=n=>S.done[n]?'COMPLETED':n==S.cur?'TODAY':dp(n).c?'IN PROGRESS':n>S.cur?'LOCKED':'PENDING';
+const lvl=n=>{if(S.done[n])return 5;const p=dp(n).p;return p==0?0:p<=25?1:p<=50?2:p<=75?3:4};
+const MSG=[[0,"Every expert started with Day 1."],[10,"You're building the habit. Keep going."],[25,"Quarter of the journey complete. 🔥"],[50,"Halfway. Don't stop now."],[75,"You're in the final stretch."],[100,"100 DAYS COMPLETE. YOU DID IT. 🏆"]];
+const motiv=p=>MSG.filter(m=>p>=m[0]).pop()[1];
+const SP={1:"DAY 1 COMPLETE 🔥\nEveryone talks about starting.\nYou actually started.",2:"DAY 2 COMPLETE ⚡\nTwo days down. Keep building.",7:"7 DAYS COMPLETE 🔥\nYou are building consistency.",10:"10 DAYS COMPLETE ⚡\nDouble digits. The habit is forming.",14:"2 WEEKS DONE 💪\nMost people quit before this.",21:"21 DAYS COMPLETE 🧠\nThree weeks of showing up.",25:"25 DAYS COMPLETE 💻\nA quarter of the grind is behind you.",30:"30 DAYS COMPLETE 🚀\nThis is no longer just motivation.\nIt's a habit.",40:"40 DAYS COMPLETE ⚡\nYour code is getting sharper.",50:"HALFWAY THERE 🏆\n50 days of showing up.",60:"60 DAYS COMPLETE 🔥\nInterviews should fear you now.",75:"75 DAYS COMPLETE 🏆\nThe finish line is visible.",90:"90 DAYS COMPLETE 🚀\nTen days. Finish strong.",99:"DAY 99 COMPLETE ⚡\nOne more. Just one more.",100:"YOU COMPLETED THE 100-DAY DSA GRIND 👑\nThis is something you can be proud of."};
+const T1=["You showed up again.","Small steps, big placement.","Consistency beats intensity.","Another brick in the wall.","Future you says thanks.","Discipline over motivation.","The grind is working.","One more day closer to placement ready."],E=["🔥","⚡","💻","🚀","🧠","💪"];
+const dmsg=n=>SP[n]||`DAY ${n} COMPLETE ${E[n%6]}\n${T1[n%8]}\n${100-n} days to go.`;
+function maxRun(){let m=0,r=0;for(let i=1;i<=100;i++){r=S.done[i]?r+1:0;m=Math.max(m,r)}return m}
+const BD=[["🏁","FIRST STEP","Complete Day 1",()=>!!S.done[1]],["🔥","7 DAY STREAK","7 consecutive days",()=>maxRun()>=7],["⚡","10 DAY GRIND","Complete 10 days",()=>doneN().length>=10],["💻","25 DAYS CODING","Complete 25 days",()=>doneN().length>=25],["🚀","HALF WAY","Complete Day 50",()=>!!S.done[50]],["🏆","75 DAYS","Complete Day 75",()=>!!S.done[75]],["👑","DSA WARRIOR","Complete Day 100",()=>!!S.done[100]]];
+A.forEach((a,i)=>BD.push([a[4].split(' ')[0],a[4].split(' ').slice(1).join(' '),"Complete Assignment "+String(i+1).padStart(2,'0')+" — "+a[0],()=>D.filter(d=>d.a==i).every(d=>S.done[d.n])]));
+const unlocked=()=>BD.filter(b=>b[3]()).map(b=>b[1]);
+let view='home',arg=null;const V={};
+function go(v,a){view=v;arg=a||null;try{history.replaceState(null,'','#'+v+(a?'/'+a:''));localStorage.setItem(KEY+'-view',v+'/'+(a||''))}catch(e){}render();scrollTo(0,0)}
+function render(){const nv=[['home','🏠','Home'],['days','📅','100 Days'],['asg','📚','Assignments'],['rev','🧠','Revision'],['ach','🏆','Achievements']];
+ $('#nav').innerHTML=nv.map(n=>`<button class="${view==n[0]||(view=='day'&&n[0]=='days')?'on':''}" data-a="go" data-v="${n[0]}"><b>${n[1]}</b>${n[2]}</button>`).join('');
+ $('#app').innerHTML='<div class="fade">'+(V[view]||V.home)()+'</div>'}
+const hdr=()=>`<div class="top"><div><div class="brand">DSA GRIND 🔥</div><div class="sub">100 Days. One Goal. Placement Ready.</div></div><div class="row" style="flex:none"><button class="ib" data-a="go" data-v="search">🔍</button><button class="ib" data-a="go" data-v="settings">⚙️</button></div></div>`;
+const bar=p=>`<div class="bar"><i style="width:${p}%"></i></div>`;
+V.home=()=>{const o=all(),s=streak(),c=Math.min(100,S.cur),d=D[c-1],p=dp(c),R=88,C=2*Math.PI*R;
+ return hdr()+`<div class="card" style="text-align:center"><div class="ring"><svg width="200" height="200"><defs><linearGradient id="g"><stop offset="0" stop-color="#22e6ff"/><stop offset="1" stop-color="#a56bff"/></linearGradient></defs><circle cx="100" cy="100" r="${R}" stroke="#ffffff14" stroke-width="14" fill="none"/><circle cx="100" cy="100" r="${R}" stroke="url(#g)" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-o.p/100)}"/></svg><div class="v">${o.p}%</div></div><div style="font-weight:700">${motiv(o.p)}</div></div>
+ <div class="card glow"><div class="sub mono">${doneN().length?'WELCOME BACK, '+esc(S.name.toUpperCase())+' · ':''}CONTINUE GRIND 🔥</div><h2 style="margin:6px 0">${doneN().length?'DAY '+c+' IS READY':'Day '+c}</h2><div>${A[d.a][0]}</div><div class="sub" style="margin:8px 0">Progress: ${p.p}%</div>${bar(p.p)}<button class="btn go" data-a="go" data-v="day" data-n="${c}">CONTINUE DAY ${c} →</button></div>${doneN().length>=100?'<button class="btn go" data-a="go" data-v="cert">🎓 VIEW CERTIFICATE</button>':''}
+ <div class="stats"><div class="card st"><span>OVERALL PROGRESS</span><b>${o.p}%</b></div><div class="card st"><span>DAYS COMPLETED</span><b>${doneN().length} / 100</b></div><div class="card st"><span>TASKS COMPLETED</span><b>${o.c} / ${o.t}</b></div><div class="card st"><span>CURRENT STREAK</span><b>${s.n} DAYS 🔥</b>${s.paused?'<small class="sub">Streak paused</small>':''}</div></div><div class="card st"><span>CURRENT DAY</span><b>DAY ${c}</b></div><div class="sub" style="text-align:center;margin-top:14px">Last saved: ${lastSaved()}</div>`};
+V.days=()=>hdr()+`<h3 style="margin:14px 0 4px">📅 100-DAY ROADMAP</h3><div class="sub">Brighter = more done. Tap any day.</div><div class="card"><div class="grid">${D.map(d=>{const st=status(d.n);return `<button class="cell l${lvl(d.n)} ${d.n==S.cur?'today':''} ${st=='LOCKED'?'lock':''}" data-a="go" data-v="day" data-n="${d.n}">${S.done[d.n]?'✓':d.n}<small>${S.done[d.n]?short(S.done[d.n]):st=='IN PROGRESS'?'IN PROG':st=='PENDING'?'DAY':st}</small></button>`}).join('')}</div></div>`;
+const tk=x=>`<label class="task ${S.tasks[x.id]?'d':''}"><input type="checkbox" data-a="tick" data-id="${x.id}" ${S.tasks[x.id]?'checked':''}><span>${esc(x.t)}</span>${x.u?`<a target="_blank" rel="noopener" href="${esc(x.u)}">Open LeetCode →</a>`:''}${x.ci!=null?`<a href="#" data-a="delq" data-n="${x.id.split(':')[0]}" data-i="${x.ci}">🗑</a>`:''}</label>`;
+V.day=()=>{const n=Math.min(100,Math.max(1,+arg||S.cur)),d=D[n-1],a=A[d.a],p=dp(n),t=tasks(n),nt=S.notes[n]||{},ok=t.every(x=>S.tasks[x.id]),dn=S.done[n];
+ return `<div class="top"><button class="ib" data-a="go" data-v="days">←</button><span class="tag">${status(n)}</span></div>
+ <div class="card glow"><div class="sub mono">DAY ${n}</div><h2>🔥 ${a[0].toUpperCase()}</h2><div class="sub">Assignment ${String(d.a+1).padStart(2,'0')} — ${a[0]}${a[1]>1?` · part ${d.k+1}/${a[1]}`:''}</div><div style="margin-top:12px" class="mono sub">DAY PROGRESS</div>${bar(p.p)}<div class="sub" style="margin-top:6px">${p.p}% · ${p.c} / ${p.t} completed</div></div>
+ ${dn?`<div class="card" style="border-color:#3dff9a88"><b style="white-space:pre-line">✓ ${dmsg(n)}</b><div class="sub" style="margin-top:6px">Completed: ${fmt(dn)}</div></div>`:''}
+ <div class="card"><h3>📺 LEARN</h3>${a[3].map((l,i)=>`<a class="btn yt" target="_blank" rel="noopener" href="${YT(l[1])}">▶ ${a[3].length>1?'Lecture '+(i+1)+': ':'WATCH: '}${esc(l[0])}</a>`).join('')}</div>
+ <div class="card"><h3>📚 ASSIGNMENT</h3><a class="btn" target="_blank" rel="noopener" href="${aUrl(d.a)}">📚 OPEN ${a[2]?'ASSIGNMENT':'ASSIGNMENTS FOLDER'}</a>${a[2]?'':'<div class="sub">Open the folder, find this assignment, and add its questions below with their links.</div>'}${t.filter(x=>x.q).map(tk).join('')}
+ <input type="text" id="cq" placeholder="Add question (e.g. Two Sum)"><input type="text" id="cu" placeholder="LeetCode URL (optional)"><button class="btn sm" data-a="addq" data-n="${n}">＋ ADD QUESTION</button></div>
+ <div class="card"><h3>✓ DAILY CHECKLIST</h3>${t.filter(x=>!x.q).map(tk).join('')}</div>
+ <div class="card"><h3>🧠 MY NOTES / MISTAKES</h3><textarea data-f="n" data-n="${n}" placeholder="What did I learn?&#10;What mistake did I make?&#10;What should I remember next time?">${esc(nt.n||'')}</textarea><label class="chk"><input type="checkbox" data-f="imp" data-n="${n}" ${nt.imp?'checked':''}>⭐ IMPORTANT</label><h3 style="margin-top:8px">❌ MISTAKES</h3><textarea data-f="m" data-n="${n}" placeholder="Mistake: forgot mid calculation…">${esc(nt.m||'')}</textarea></div>
+ <button class="btn go ${ok?'':'dis'}" data-a="complete" data-n="${n}">${dn?'✓ DAY COMPLETE':ok?'✓ COMPLETE DAY':'✓ FINISH ALL TASKS TO COMPLETE'}</button>
+ <div class="row"><button class="btn sm" ${n>1?`data-a="go" data-v="day" data-n="${n-1}"`:'disabled'}>← Previous Day</button><button class="btn sm" ${n<100?`data-a="go" data-v="day" data-n="${n+1}"`:'disabled'}>Next Day →</button></div>`};
+V.asg=()=>hdr()+'<h3 style="margin:14px 0 0">📚 ASSIGNMENTS</h3>'+A.map((a,i)=>{const p=aProg(i),f=D.find(d=>d.a==i).n,nx=(D.find(d=>d.a==i&&!S.done[d.n])||{n:f}).n;return `<div class="card"><div class="sub mono">ASSIGNMENT ${String(i+1).padStart(2,'0')}</div><h3>${a[0].toUpperCase()}</h3><div class="sub" style="margin:6px 0">Days ${f}–${f+a[1]-1} · ${p.c} / ${p.t} tasks</div>${bar(p.p)}<div class="sub" style="margin:4px 0 8px">${p.p}%</div><button class="btn sm" data-a="go" data-v="day" data-n="${nx}">Continue Assignment</button></div>`}).join('');
+V.rev=()=>{const imp=Object.entries(S.notes).filter(([n,v])=>v.imp&&v.n),mis=Object.entries(S.notes).filter(([n,v])=>v.m),grp={},f=(S.rq||'').toLowerCase();
+ imp.forEach(([n,v])=>{const k=A[D[n-1].a][0];(grp[k]=grp[k]||[]).push([n,v.n])});
+ return hdr()+`<h3 style="margin:14px 0 6px">🧠 REVISION</h3>${Object.keys(grp).length?Object.entries(grp).map(([k,v])=>`<div class="card"><span class="tag">${esc(k)}</span>${v.map(([n,t])=>`<div style="margin-top:10px" data-a="go" data-v="day" data-n="${n}"><b class="sub">Day ${n} ⭐</b><div style="white-space:pre-wrap">${esc(t)}</div></div>`).join('')}</div>`).join(''):'<div class="card sub">Write a note and tick ⭐ IMPORTANT on a day — it appears here, grouped by topic.</div>'}<h3 style="margin:18px 0 6px">❌ MY MISTAKES</h3><input type="search" id="rq" placeholder="Search mistakes…" value="${esc(S.rq||'')}">${mis.filter(([n,v])=>!f||(v.m+A[D[n-1].a][0]).toLowerCase().includes(f)).map(([n,v])=>`<div class="card" data-a="go" data-v="day" data-n="${n}"><b>Day ${n}</b> <span class="sub">${esc(A[D[n-1].a][0])}</span><div style="white-space:pre-wrap;margin-top:6px">${esc(v.m)}</div></div>`).join('')||'<div class="card sub">No mistakes logged yet.</div>'}`};
+V.ach=()=>{const u=unlocked();return hdr()+`<h3 style="margin:14px 0 0">🏆 ACHIEVEMENTS</h3><div class="sub">${u.length} / ${BD.length} unlocked</div>`+BD.map(b=>`<div class="badge ${u.includes(b[1])?'on':''}"><em>${b[0]}</em><div><b>${b[1]}</b><div class="sub">${b[2]}</div></div></div>`).join('')};
+V.search=()=>{const q=(S.sq||'').toLowerCase().trim();let r=[];if(q)D.forEach(d=>{const n=d.n,a=A[d.a],nt=S.notes[n]||{};
+ const hay=[['Day','day '+n],['Assignment',a[0]],['Lecture',a[3].map(l=>l[0]).join(' ')],['Question',tasks(n).filter(x=>x.q).map(x=>x.t).join(' ')],['Note',nt.n||''],['Mistake',nt.m||'']];const h=hay.find(x=>x[1].toLowerCase().includes(q));if(h)r.push([n,a[0],h[0]])});
+ return hdr()+`<input type="search" id="q" placeholder="Search day, topic, problem, notes…" value="${esc(S.sq||'')}" style="margin-top:12px">${r.slice(0,40).map(x=>`<div class="card" data-a="go" data-v="day" data-n="${x[0]}"><b>Day ${x[0]}</b> · ${esc(x[1])} <span class="tag">${x[2]}</span></div>`).join('')}`};
+V.settings=()=>hdr()+`<h3 style="margin:14px 0">⚙️ SETTINGS</h3><div class="card sub">Last saved: ${lastSaved()}</div><div class="card"><div class="sub">Your name (used on the certificate)</div><input type="text" id="nm" value="${esc(S.name)}"><button class="btn" data-a="exp">⚙️ Export Progress</button><button class="btn" data-a="imp">📥 Import Progress</button><button class="btn" data-a="bk">💾 Backup Now</button><button class="btn" data-a="rs">♻️ Restore Backup</button><button class="btn" data-a="go" data-v="cert">🎓 Certificate</button><button class="btn" style="border-color:#ff4d6d" data-a="reset">Reset Progress</button></div><div class="card sub">Lectures come from Kunal Kushwaha's SYLLABUS.md. Assignment 01 links to its exact file; the rest open the assignments folder and you add each assignment's questions per day. Data is saved on this device only.</div>`;
+function save2(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove()}
+const X=s=>esc(s).replace(/'/g,'&#39;');
+function certSVG(c){const T=(y,sz,t,o='')=>`<text x="550" y="${y}" text-anchor="middle" font-family="Georgia,serif" font-size="${sz}" ${o}>${t}</text>`;
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780"><rect width="1100" height="780" fill="#fffdf6"/><rect x="24" y="24" width="1052" height="732" fill="none" stroke="#b8902f" stroke-width="6"/><rect x="42" y="42" width="1016" height="696" fill="none" stroke="#0e2a47" stroke-width="2"/>
+ ${T(120,24,'DSA GRIND · 100-DAY JOURNEY','fill="#0e7c9a" letter-spacing="6"')}${T(190,54,'CERTIFICATE OF COMPLETION','fill="#0e2a47" font-weight="bold"')}${T(250,22,'This is to certify that','fill="#555" font-style="italic"')}
+ ${T(335,68,X(c.name.toUpperCase()),'fill="#b8902f" font-weight="bold"')}<line x1="250" y1="355" x2="850" y2="355" stroke="#b8902f"/>${T(405,22,'has successfully completed the','fill="#555" font-style="italic"')}
+ ${T(455,30,'100 DAY JAVA + DATA STRUCTURES &amp; ALGORITHMS JOURNEY','fill="#0e2a47" font-weight="bold"')}${T(495,20,'based on the DSA Bootcamp Java learning roadmap.','fill="#555"')}
+ ${T(570,24,'Completion: 100 / 100 Days','fill="#0e2a47"')}${T(608,24,'Date: '+fmt(c.date),'fill="#0e2a47"')}
+ ${T(676,18,'Certificate ID: '+c.id,'fill="#0e7c9a" font-family="monospace"')}${T(704,14,'App-generated personal certificate — not an official certificate of Kunal Kushwaha or any institution.','fill="#777"')}</svg>`}
+function dlCert(){const img=new Image();img.onload=()=>{const cv=document.createElement('canvas');cv.width=2200;cv.height=1560;cv.getContext('2d').drawImage(img,0,0,2200,1560);cv.toBlob(b=>save2(b,'DSA-Grind-Certificate-'+S.cert.id+'.png'))};img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(certSVG(S.cert))}
+V.cert=()=>{ensureCert();const c=S.cert;if(!c)return hdr()+'<div class="card">🔒 Complete all 100 days to unlock your certificate. ('+doneN().length+'/100)</div>';
+ const link=location.href.split('#')[0]+'#verify/'+c.id+'/'+encodeURIComponent(c.name)+'/'+c.date,row=(a,b)=>`<div class="task"><span class="sub">${a}</span><b style="margin-left:auto">${b}</b></div>`;
+ return `<div class="noprint">${hdr()}<div class="card glow" style="text-align:center"><h2>🎓 DSA GRIND</h2><div>100 DAY JAVA + DSA JOURNEY</div><h2 style="color:var(--g)">COMPLETED</h2></div><div class="card">${row('Name',esc(c.name))}${row('Course','Java + Data Structures &amp; Algorithms')}${row('Duration','100 Days')}${row('Completion date',fmt(c.date))}${row('Days completed',doneN().length+'/100')}${row('Problems completed',qDone())}${row('Assignments completed',asgDone()+'/'+A.length)}${row('Longest streak',maxRun()+' days')}${row('Overall completion',all().p+'%')}</div></div>
+ <div id="certbox">${certSVG(c)}</div><div class="noprint"><button class="btn go" data-a="dlcert">⬇ DOWNLOAD CERTIFICATE (PNG)</button><button class="btn" data-a="print">🖨 PRINT CERTIFICATE</button><div class="card sub" style="word-break:break-all">Verification link:<br>${esc(link)}</div></div>`};
+V.verify=()=>{const[id,nm,dt]=(arg||'').split('/');let ok=false,name='',date=dt||'';
+ if(nm&&dt){name=decodeURIComponent(nm);ok=certId(name,dt)===id}else if(S.cert&&S.cert.id===id){ok=true;name=S.cert.name;date=S.cert.date}
+ return `<div class="brand" style="margin-top:14px">DSA GRIND</div><div class="card ${ok?'glow':''}"><div class="sub">CERTIFICATE VERIFICATION</div><h2>${ok?'✓ Verified':'✗ Not verified'}</h2>${ok?`<p>Certificate: DSA Grind 100-Day Journey<br>Name: ${esc(name)}<br>Status: Completed<br>Days: 100/100<br>Completion Date: ${fmt(date)}<br>ID: ${esc(id)}</p>`:'<p>This ID does not match the name/date in the link.</p>'}<p class="sub">App-generated personal certificate. Verification checks the ID against the name and date; it is not an official credential.</p></div><button class="btn" data-a="go" data-v="home">Open app</button>`};
+function modal(h){const o=document.createElement('div');o.className='ov';o.innerHTML='<div class="card fade">'+h+'</div>';o.onclick=e=>{if(e.target==o||e.target.dataset.a=='close')o.remove()};document.body.appendChild(o);return o}
+function confetti(){const c=['#22e6ff','#a56bff','#3dff9a','#ffd24a','#ff8a3d'];for(let i=0;i<45;i++){const e=document.createElement('div');e.className='cf';e.style.left=Math.random()*100+'vw';e.style.background=c[i%5];e.style.animationDelay=Math.random()*.6+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3400)}}
+function complete(n){if(!tasks(n).every(x=>S.tasks[x.id])){modal('<h3>Not yet 💪</h3><p class="sub">Tick every task first.</p><button class="btn" data-a="close">OK</button>');return}
+ if(!S.done[n]){S.done[n]=dstr(now())}S.cur=firstOpen();
+ const nu=unlocked().filter(b=>!S.badges.includes(b));S.badges=unlocked();ensureCert();save();render();confetti();const s=streak();if(doneN().length==100){go('cert');return}
+ modal(`<h2>DAY ${n} COMPLETED ✓</h2><p style="white-space:pre-line">${dmsg(n)}</p><p><b>🔥 ${s.n} DAY STREAK${s.n>1?'!':''}</b><br>Overall: ${all().p}% · ${doneN().length}/100 days${n<100?' · Next: Day '+(n+1):''}</p>${nu.map(b=>{const x=BD.find(y=>y[1]==b);return `<div class="badge on"><em>${x[0]}</em><div><b>BADGE UNLOCKED</b><div>${x[1]}</div></div></div>`}).join('')}${n<100?`<button class="btn go" data-a="go" data-v="day" data-n="${n+1}">CONTINUE TO DAY ${n+1} →</button>`:''}<button class="btn sm" data-a="close">Close</button>`)}
+function onClick(e){const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,n=+t.dataset.n;
+ if(a=='go'){e.preventDefault();document.querySelectorAll('.ov').forEach(o=>o.remove());go(t.dataset.v,t.dataset.n)}
+ else if(a=='tick'){S.tasks[t.dataset.id]=t.checked;const dn=+t.dataset.id.split(':')[0];if(!t.checked&&S.done[dn])delete S.done[dn];S.cur=firstOpen();S.badges=unlocked();save();render()}
+ else if(a=='addq'){const q=$('#cq').value.trim();if(!q)return;(S.custom[n]=S.custom[n]||[]).push({t:q,u:$('#cu').value.trim()});save();render()}
+ else if(a=='delq'){e.preventDefault();e.stopPropagation();S.custom[n].splice(+t.dataset.i,1);Object.keys(S.tasks).filter(k=>k.startsWith(n+':c')).forEach(k=>delete S.tasks[k]);save();render()}
+ else if(a=='complete')complete(n);
+ else if(a=='exp')modal(`<h3>Export</h3><p class="sub">Copy this JSON and keep it safe.</p><textarea id="ex" readonly>${esc(JSON.stringify(S))}</textarea><button class="btn go" data-a="dl">⬇ Download file</button><button class="btn" data-a="copy">Copy</button><button class="btn sm" data-a="close">Close</button>`)
+ else if(a=='copy'){const x=$('#ex');x.select();try{navigator.clipboard.writeText(x.value)}catch(_){document.execCommand('copy')}t.textContent='Copied ✓'}
+ else if(a=='imp')modal(`<h3>Import</h3><p class="sub">Paste exported JSON. This replaces current data.</p><input type="file" id="imf" accept=".json,application/json"><textarea id="im" placeholder="…or paste JSON here"></textarea><button class="btn go" data-a="doimp">Import</button><button class="btn sm" data-a="close">Cancel</button>`)
+ else if(a=='doimp'){try{const j=JSON.parse($('#im').value);if(!j.tasks||!j.done)throw 0;S=Object.assign(fresh(),j);S.cur=firstOpen();save();document.querySelector('.ov').remove();render()}catch(_){t.textContent='Invalid JSON ✗'}}
+ else if(a=='reset')modal(`<h3>Are you sure?</h3><p class="sub">This will erase your 100-day progress, notes and achievements.</p><div class="row"><button class="btn" data-a="close">Cancel</button><button class="btn" style="border-color:#ff4d6d;background:#ff4d6d33" data-a="doreset">Reset Everything</button></div>`)
+ else if(a=='dl')save2(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}),'dsa-grind-progress-'+dstr(now())+'.json')
+ else if(a=='bk'){autoBackup(true);t.textContent='Backed up ✓'}
+ else if(a=='rs'){let b=[];try{b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]')}catch(_){}modal('<h3>Restore backup</h3><p class="sub">Current progress is backed up first.</p>'+(b.map((x,i)=>`<button class="btn sm" data-a="dors" data-i="${i}">${new Date(x.t).toLocaleString()}</button>`).join('')||'<p class="sub">No backups yet.</p>')+'<button class="btn sm" data-a="close">Close</button>')}
+ else if(a=='dors'){const b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]'),d=b[+t.dataset.i].d;autoBackup(true);S=Object.assign(fresh(),JSON.parse(d));S.cur=firstOpen();save();document.querySelector('.ov').remove();render()}
+ else if(a=='dlcert')dlCert()
+ else if(a=='print')window.print()
+ else if(a=='doreset'){autoBackup(true);S=fresh();save();document.querySelector('.ov').remove();go('home')}}
+function onInput(e){const t=e.target,n=t.dataset.n;
+ if(t.dataset.f){S.notes[n]=S.notes[n]||{};if(t.dataset.f=='imp')S.notes[n].imp=t.checked;else S.notes[n][t.dataset.f]=t.value;save()}
+ else if(t.id=='nm'){S.name=t.value.trim()||'Vishwas';save()}
+ else if(t.id=='q'||t.id=='rq'){const k=t.id=='q'?'sq':'rq',p=t.selectionStart;S[k]=t.value;save();render();const i=$('#'+t.id);i.focus();i.setSelectionRange(p,p)}}
+if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('click',onClick);document.addEventListener('input',onInput);
+ document.addEventListener('change',e=>{if(e.target.id=='imf'){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('#im').value=r.result};r.readAsText(f)}});
+ (function(){const h=location.hash.slice(1),i=h.indexOf('/'),v=i<0?h:h.slice(0,i);if(V[v]&&(v!='cert'||S.cert)){view=v;arg=i<0?null:h.slice(i+1)}render();
+  try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+  if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{})})()}
+</script></body></html>
