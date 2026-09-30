@@ -29,6 +29,39 @@ nav button{flex:1;background:none;border:0;color:var(--m);font-size:10px;min-hei
 label.chk{display:flex;gap:10px;align-items:center;min-height:44px}label.chk input{width:22px;height:22px;accent-color:var(--o)}
 @media print{nav,.noprint{display:none!important}body{background:#fff;padding:0}#app{max-width:none;padding:0}#certbox{margin:0}@page{size:landscape;margin:8mm}}
 #certbox svg{width:100%;height:auto;border-radius:10px;display:block;box-shadow:0 0 24px #0008}
+.chip{background:var(--c);border:1px solid var(--b);color:var(--t);border-radius:99px;min-height:44px;padding:0 16px;font-weight:800;font-size:13px;margin-top:10px;letter-spacing:.5px}
+.pf{padding-top:16px}.pf h1{font-size:26px;text-align:center;margin:10px 0 4px;letter-spacing:.5px}.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.pc{border-radius:22px;border:1px solid var(--b);background:var(--c);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--t);min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;animation:pop .45s}
+.pc b{font-size:15px;letter-spacing:.5px;max-width:100%;overflow:hidden;text-overflow:ellipsis}.pc small{color:var(--m);font-size:11px}
+.pa{font-size:44px;width:84px;height:84px;border-radius:26px;display:grid;place-items:center;background:linear-gradient(135deg,hsl(var(--h) 90% 45%),hsl(var(--h2) 90% 55%));box-shadow:0 0 24px hsl(var(--h) 90% 50%/.45)}
+.pc.last{border-color:var(--n);box-shadow:0 0 22px #22e6ff44}.pc.add{border-style:dashed}.pc.add .pa{background:#ffffff10;box-shadow:none;color:var(--n);font-size:38px}
+.avg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}.av input{display:none}.av span{display:grid;place-items:center;height:56px;font-size:28px;border-radius:16px;border:1px solid var(--b);background:#ffffff08}.av input:checked+span{border-color:var(--n);box-shadow:0 0 14px #22e6ff66;background:#22e6ff22}
+html,body{overflow-x:hidden}
+.pc{transition:transform .5s,opacity .5s,filter .5s,box-shadow .5s;min-height:200px}.pc:active{transform:scale(.97)}
+.pc.dim{opacity:.22;transform:scale(.93);filter:blur(1px);pointer-events:none}.pc.sel{transform:scale(1.07);border-color:var(--n);box-shadow:0 0 38px #22e6ff99}
+.pf.entering::before{content:"";position:fixed;inset:0;background:radial-gradient(500px 420px at 50% 45%,#22e6ff26,transparent);animation:fi .6s both;pointer-events:none}
+.rg{width:94px;height:94px;border-radius:50%;background:conic-gradient(var(--n) calc(var(--p)*1%),#ffffff1f 0);display:grid;place-items:center}.rg .pa{width:80px;height:80px;border-radius:50%;font-size:38px}
+.pa.big{width:124px;height:124px;border-radius:50%;font-size:66px;margin:0 auto;animation:glw 1.6s ease-in-out infinite alternate}@keyframes glw{to{box-shadow:0 0 60px hsl(var(--h,190) 95% 55%/.8)}}
+.snd{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;width:46px;height:46px;border-radius:14px;border:1px solid var(--b);background:var(--c);color:var(--t);font-size:18px;z-index:101}
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(600px 420px at 50% 45%,#0b2a4a,#050710 70%);display:grid;place-items:center;align-content:center;gap:6px;transition:opacity .4s;overflow:hidden}#intro.out{opacity:0;pointer-events:none}
+.il{font-size:clamp(34px,11vw,48px);font-weight:900;letter-spacing:4px;background:linear-gradient(90deg,var(--n),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;animation:logo 1.9s ease-out both;filter:drop-shadow(0 0 18px #22e6ffaa)}
+.isub{font-size:12px;letter-spacing:5px;color:var(--m);animation:up .8s .7s both}
+@keyframes logo{0%{opacity:0;transform:scale(.7);letter-spacing:14px}35%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1.08)}}
+.ip i{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--n);box-shadow:0 0 8px var(--n);opacity:0;left:var(--x);top:var(--y);animation:pt 2s ease-out infinite}@keyframes pt{0%{opacity:0;transform:translateY(0)}30%{opacity:.9}100%{opacity:0;transform:translateY(-70px)}}
+.skip{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);min-height:46px;padding:0 22px;border-radius:99px;border:1px solid var(--b);background:#ffffff0d;color:var(--m);font-weight:700}
+.cel,.wel{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));background:radial-gradient(520px 420px at 50% 40%,#0e3a4fee,#050710f5 75%);animation:fi .35s;overflow:auto}.cel.out,.wel.out{opacity:0;transition:opacity .35s}
+.cc{max-width:360px;width:100%}.c1{font-size:clamp(26px,9vw,34px);font-weight:900;letter-spacing:1px;margin:10px 0;animation:up .6s .5s both}.c2{animation:up .6s .8s both;margin:6px 0}.c3{margin:14px 0;font-size:16px;animation:up .6s .9s both}.c4{color:var(--n);font-weight:800;margin:10px 0;animation:up .6s 1.2s both}.cc .bar{animation:up .6s .9s both;margin-top:8px}.cel .btn{animation:up .6s 1.5s both}
+.ck{width:96px;height:96px;filter:drop-shadow(0 0 16px #3dff9a)}.ck circle{fill:none;stroke:var(--g);stroke-width:2.5;stroke-dasharray:151;stroke-dashoffset:151;animation:dr .6s .1s forwards}.ck path{fill:none;stroke:var(--g);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:50;stroke-dashoffset:50;animation:dr .4s .6s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}@keyframes up{from{opacity:0;transform:translateY(14px)}}@keyframes fillup{from{width:0}}
+.hun{grid-template-areas:"x"}.hun .cc{grid-area:x}.hun .s1{animation:st1 2.6s forwards}.hun .s2{animation:st2 .7s 2.5s both}
+@keyframes st1{0%,80%{opacity:1}100%{opacity:0;visibility:hidden}}@keyframes st2{0%{opacity:0;visibility:hidden}100%{opacity:1;visibility:visible}}
+.hun::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(#ffd24a44,transparent 65%);animation:glw2 2.4s ease-in-out infinite alternate}@keyframes glw2{to{transform:scale(1.25);opacity:.6}}
+.w1{font-size:14px;letter-spacing:4px;color:var(--m);margin-top:22px;animation:up .6s .3s both}.w2{font-size:clamp(34px,12vw,46px);font-weight:900;letter-spacing:2px;line-height:1.1;margin:6px 0;word-break:break-word;background:linear-gradient(90deg,var(--n),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;animation:up .6s .45s both}.w3{font-size:20px;font-weight:800;animation:up .6s .7s both}.w4{color:var(--m);margin:8px 0 22px;animation:up .6s .9s both}.wel .btn{max-width:320px;margin:22px auto 8px;animation:up .6s 1s both}
+.wbar{height:3px;max-width:320px;margin:10px auto;background:#ffffff14;border-radius:3px;overflow:hidden}.wbar i{display:block;height:100%;background:var(--n);animation:fillup 3.2s linear both}
+.toast{position:fixed;left:12px;right:12px;top:calc(12px + env(safe-area-inset-top,0px));max-width:406px;margin:0 auto;z-index:70;background:linear-gradient(135deg,#1a1440f5,#0c2a3ff5);border:1px solid #ffd24aaa;border-radius:18px;padding:14px 16px;box-shadow:0 0 30px #ffd24a44;animation:tin .45s cubic-bezier(.2,.9,.3,1.2) both}.toast.out{animation:tout .4s forwards}.toast .btn{min-height:44px;margin:8px 0 0;font-size:12px}
+@keyframes tin{from{opacity:0;transform:translateY(-30px) scale(.96)}}@keyframes tout{to{opacity:0;transform:translateY(-30px)}}.tk{font-size:11px;letter-spacing:2px;color:#ffd24a;font-weight:800}
+nav:empty{display:none}.pc.add .pa{border-radius:50%;width:80px;height:80px}.il{font-size:clamp(30px,9.5vw,46px)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hun .s1{display:none}.ip{display:none}}
 </style></head><body><div id="app"></div><nav id="nav"></nav>
 <script>
 const REPO='https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/',YT=id=>'https://youtu.be/'+id;
@@ -56,9 +89,7 @@ const Q1=["Input a year and find whether it is a leap year or not.","Take two nu
 const STD=["Watch today's lecture","Understand the concepts","Complete assignment","Solve LeetCode / practice questions","Write / revise my Java code","Push code to GitHub"];
 const D=[];A.forEach((a,i)=>{for(let k=0;k<a[1];k++)D.push({n:D.length+1,a:i,k})});
 const aUrl=i=>A[i][2]?REPO+'blob/main/assignments/'+A[i][2]:REPO+'tree/main/assignments';
-const KEY='dsa-grind-v1',fresh=()=>({v:2,name:'Vishwas',tasks:{},custom:{},notes:{},done:{},cur:1,badges:[],saved:null,lastActive:null,cert:null});let S;
-try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-S=Object.assign(fresh(),S||{});S.v=2;
+const LEG='dsa-grind-v1',RK='dsa-grind-profiles',PK='dsa-grind-p-';let KEY=null;const fresh=()=>({v:2,name:'Vishwas',tasks:{},custom:{},notes:{},done:{},cur:1,badges:[],saved:null,lastActive:null,cert:null});let S=fresh();S.v=2;
 const now=()=>new Date(globalThis.__NOW||Date.now());
 const dstr=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const pd=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
@@ -68,7 +99,7 @@ function firstOpen(){for(let i=1;i<=100;i++)if(!S.done[i])return i;return 100}
 S.cur=firstOpen();
 const lastSaved=()=>S.saved?new Date(S.saved).toLocaleString():'not yet';
 function autoBackup(force){try{const b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]'),l=b[0];if(force||!l||now()-new Date(l.t)>36e5){b.unshift({t:now().toISOString(),d:JSON.stringify(S)});localStorage.setItem(KEY+'-bk',JSON.stringify(b.slice(0,5)))}}catch(e){}}
-const save=()=>{try{S.saved=now().toISOString();S.lastActive=dstr(now());localStorage.setItem(KEY,JSON.stringify(S));autoBackup()}catch(e){}};
+const save=()=>{if(!KEY)return;try{S.saved=now().toISOString();S.lastActive=dstr(now());localStorage.setItem(KEY,JSON.stringify(S));autoBackup()}catch(e){}};
 const qDone=()=>Object.keys(S.tasks).filter(k=>S.tasks[k]&&/:[qc]\d+$/.test(k)).length;
 const asgDone=()=>A.filter((a,i)=>D.filter(d=>d.a==i).every(d=>S.done[d.n])).length;
 const h32=s=>{let h=5381;for(const c of s)h=((h*33)^c.charCodeAt(0))>>>0;return h.toString(36).toUpperCase().padStart(7,'0')};
@@ -95,12 +126,12 @@ function maxRun(){let m=0,r=0;for(let i=1;i<=100;i++){r=S.done[i]?r+1:0;m=Math.m
 const BD=[["🏁","FIRST STEP","Complete Day 1",()=>!!S.done[1]],["🔥","7 DAY STREAK","7 consecutive days",()=>maxRun()>=7],["⚡","10 DAY GRIND","Complete 10 days",()=>doneN().length>=10],["💻","25 DAYS CODING","Complete 25 days",()=>doneN().length>=25],["🚀","HALF WAY","Complete Day 50",()=>!!S.done[50]],["🏆","75 DAYS","Complete Day 75",()=>!!S.done[75]],["👑","DSA WARRIOR","Complete Day 100",()=>!!S.done[100]]];
 A.forEach((a,i)=>BD.push([a[4].split(' ')[0],a[4].split(' ').slice(1).join(' '),"Complete Assignment "+String(i+1).padStart(2,'0')+" — "+a[0],()=>D.filter(d=>d.a==i).every(d=>S.done[d.n])]));
 const unlocked=()=>BD.filter(b=>b[3]()).map(b=>b[1]);
-let view='home',arg=null;const V={};
-function go(v,a){view=v;arg=a||null;try{history.replaceState(null,'','#'+v+(a?'/'+a:''));localStorage.setItem(KEY+'-view',v+'/'+(a||''))}catch(e){}render();scrollTo(0,0)}
+let view='profiles',arg=null,FA=true;const V={};
+function go(v,a){view=v;arg=a||null;FA=true;try{history.replaceState(null,'','#'+v+(a?'/'+a:''));localStorage.setItem(KEY+'-view',v+'/'+(a||''))}catch(e){}render();scrollTo(0,0)}
 function render(){const nv=[['home','🏠','Home'],['days','📅','100 Days'],['asg','📚','Assignments'],['rev','🧠','Revision'],['ach','🏆','Achievements']];
- $('#nav').innerHTML=nv.map(n=>`<button class="${view==n[0]||(view=='day'&&n[0]=='days')?'on':''}" data-a="go" data-v="${n[0]}"><b>${n[1]}</b>${n[2]}</button>`).join('');
- $('#app').innerHTML='<div class="fade">'+(V[view]||V.home)()+'</div>'}
-const hdr=()=>`<div class="top"><div><div class="brand">DSA GRIND 🔥</div><div class="sub">100 Days. One Goal. Placement Ready.</div></div><div class="row" style="flex:none"><button class="ib" data-a="go" data-v="search">🔍</button><button class="ib" data-a="go" data-v="settings">⚙️</button></div></div>`;
+ $('#nav').innerHTML=(view=='profiles'||view=='verify')?'':nv.map(n=>`<button class="${view==n[0]||(view=='day'&&n[0]=='days')?'on':''}" data-a="go" data-v="${n[0]}"><b>${n[1]}</b>${n[2]}</button>`).join('');
+ $('#app').innerHTML='<div class="'+(FA?'fade':'')+'">'+(V[view]||V.home)()+'</div>';FA=false}
+const hdr=()=>`<div class="top"><div><div class="brand">DSA GRIND 🔥</div><div class="sub">100 Days. One Goal. Placement Ready.</div></div><div class="row" style="flex:none"><button class="ib" data-a="go" data-v="search">🔍</button><button class="ib" data-a="go" data-v="settings">⚙️</button></div></div><button class="chip" data-a="pmenu">${esc(curAv())} ${esc(S.name.toUpperCase())} ▾</button>`;
 const bar=p=>`<div class="bar"><i style="width:${p}%"></i></div>`;
 V.home=()=>{const o=all(),s=streak(),c=Math.min(100,S.cur),d=D[c-1],p=dp(c),R=88,C=2*Math.PI*R;
  return hdr()+`<div class="card" style="text-align:center"><div class="ring"><svg width="200" height="200"><defs><linearGradient id="g"><stop offset="0" stop-color="#22e6ff"/><stop offset="1" stop-color="#a56bff"/></linearGradient></defs><circle cx="100" cy="100" r="${R}" stroke="#ffffff14" stroke-width="14" fill="none"/><circle cx="100" cy="100" r="${R}" stroke="url(#g)" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-o.p/100)}"/></svg><div class="v">${o.p}%</div></div><div style="font-weight:700">${motiv(o.p)}</div></div>
@@ -127,7 +158,7 @@ V.ach=()=>{const u=unlocked();return hdr()+`<h3 style="margin:14px 0 0">🏆 ACH
 V.search=()=>{const q=(S.sq||'').toLowerCase().trim();let r=[];if(q)D.forEach(d=>{const n=d.n,a=A[d.a],nt=S.notes[n]||{};
  const hay=[['Day','day '+n],['Assignment',a[0]],['Lecture',a[3].map(l=>l[0]).join(' ')],['Question',tasks(n).filter(x=>x.q).map(x=>x.t).join(' ')],['Note',nt.n||''],['Mistake',nt.m||'']];const h=hay.find(x=>x[1].toLowerCase().includes(q));if(h)r.push([n,a[0],h[0]])});
  return hdr()+`<input type="search" id="q" placeholder="Search day, topic, problem, notes…" value="${esc(S.sq||'')}" style="margin-top:12px">${r.slice(0,40).map(x=>`<div class="card" data-a="go" data-v="day" data-n="${x[0]}"><b>Day ${x[0]}</b> · ${esc(x[1])} <span class="tag">${x[2]}</span></div>`).join('')}`};
-V.settings=()=>hdr()+`<h3 style="margin:14px 0">⚙️ SETTINGS</h3><div class="card sub">Last saved: ${lastSaved()}</div><div class="card"><div class="sub">Your name (used on the certificate)</div><input type="text" id="nm" value="${esc(S.name)}"><button class="btn" data-a="exp">⚙️ Export Progress</button><button class="btn" data-a="imp">📥 Import Progress</button><button class="btn" data-a="bk">💾 Backup Now</button><button class="btn" data-a="rs">♻️ Restore Backup</button><button class="btn" data-a="go" data-v="cert">🎓 Certificate</button><button class="btn" style="border-color:#ff4d6d" data-a="reset">Reset Progress</button></div><div class="card sub">Lectures come from Kunal Kushwaha's SYLLABUS.md. Assignment 01 links to its exact file; the rest open the assignments folder and you add each assignment's questions per day. Data is saved on this device only.</div>`;
+V.settings=()=>hdr()+`<h3 style="margin:14px 0">⚙️ SETTINGS</h3><div class="card sub">Last saved: ${lastSaved()}</div><div class="card"><div class="sub">Profile: ${esc(S.name)} (name on certificate)</div><button class="btn" data-a="pmanage">👥 Manage Profiles</button><button class="btn" data-a="exp">⚙️ Export Progress</button><button class="btn" data-a="imp">📥 Import Progress</button><button class="btn" data-a="snd">🔊 Sound: ${soundOn()?'ON':'OFF'}</button><button class="btn" data-a="bk">💾 Backup Now</button><button class="btn" data-a="rs">♻️ Restore Backup</button><button class="btn" data-a="go" data-v="cert">🎓 Certificate</button><button class="btn" style="border-color:#ff4d6d" data-a="reset">Reset Progress</button></div><div class="card sub">Lectures come from Kunal Kushwaha's SYLLABUS.md. Assignment 01 links to its exact file; the rest open the assignments folder and you add each assignment's questions per day. Data is saved on this device only.</div>`;
 function save2(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove()}
 const X=s=>esc(s).replace(/'/g,'&#39;');
 function certSVG(c){const T=(y,sz,t,o='')=>`<text x="550" y="${y}" text-anchor="middle" font-family="Georgia,serif" font-size="${sz}" ${o}>${t}</text>`;
@@ -145,37 +176,147 @@ V.cert=()=>{ensureCert();const c=S.cert;if(!c)return hdr()+'<div class="card">�
 V.verify=()=>{const[id,nm,dt]=(arg||'').split('/');let ok=false,name='',date=dt||'';
  if(nm&&dt){name=decodeURIComponent(nm);ok=certId(name,dt)===id}else if(S.cert&&S.cert.id===id){ok=true;name=S.cert.name;date=S.cert.date}
  return `<div class="brand" style="margin-top:14px">DSA GRIND</div><div class="card ${ok?'glow':''}"><div class="sub">CERTIFICATE VERIFICATION</div><h2>${ok?'✓ Verified':'✗ Not verified'}</h2>${ok?`<p>Certificate: DSA Grind 100-Day Journey<br>Name: ${esc(name)}<br>Status: Completed<br>Days: 100/100<br>Completion Date: ${fmt(date)}<br>ID: ${esc(id)}</p>`:'<p>This ID does not match the name/date in the link.</p>'}<p class="sub">App-generated personal certificate. Verification checks the ID against the name and date; it is not an official credential.</p></div><button class="btn" data-a="go" data-v="home">Open app</button>`};
+const AV=['🧑‍💻','🦊','🐼','🦁','🐯','🚀','🤖','👾','🦉','🐉','🎯','⚡'];
+let REG=null,ACT=null;
+const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const saveReg=()=>lsSet(RK,JSON.stringify(REG));
+const curName=()=>REG&&ACT&&REG.profiles[ACT]?REG.profiles[ACT].name:'Vishwas';
+const curAv=()=>REG&&ACT&&REG.profiles[ACT]?REG.profiles[ACT].avatar:AV[0];
+const hue=id=>{let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))%360;return h};
+function loadReg(){let r=null;try{r=JSON.parse(lsGet(RK))}catch(e){}
+ if(!r||!r.profiles||!Array.isArray(r.order)||!r.order.length){ // first run of profile system: existing data becomes VISHWAS
+  r={v:1,last:null,order:['p1'],profiles:{p1:{name:'Vishwas',avatar:AV[0],created:now().toISOString()}}};
+  const leg=lsGet(LEG);if(leg&&!lsGet(PK+'p1')){lsSet(PK+'p1',leg);const bk=lsGet(LEG+'-bk');if(bk)lsSet(PK+'p1-bk',bk)}
+  REG=r;saveReg()}
+ return r}
+function flush(){if(KEY)lsSet(KEY,JSON.stringify(S))}
+function loadProfile(id){flush();ACT=id;KEY=PK+id;let o=null;try{o=JSON.parse(lsGet(KEY))}catch(e){}
+ S=Object.assign(fresh(),o||{});S.v=2;S.name=REG.profiles[id].name;S.cur=firstOpen();if(!o)flush();REG.last=id;saveReg();try{sessionStorage.setItem('dsa-active',id)}catch(e){}}
+function leaveProfile(){flush();ACT=null;KEY=null;S=fresh();try{sessionStorage.removeItem('dsa-active')}catch(e){}}
+function createProfile(name,av){name=(name||'').trim().slice(0,20);if(!name)return{err:'Enter a name'};if(REG.order.length>=5)return{err:'5/5 profiles — limit reached'};
+ if(REG.order.some(i=>REG.profiles[i].name.toLowerCase()==name.toLowerCase()))return{err:'That name is already used'};
+ const id='p'+now().getTime().toString(36)+Math.random().toString(36).slice(2,6);REG.profiles[id]={name,avatar:AV.includes(av)?av:AV[0],created:now().toISOString()};REG.order.push(id);saveReg();
+ const f=fresh();f.name=name;lsSet(PK+id,JSON.stringify(f));return{id}}
+function editProfile(id,name,av){name=(name||'').trim().slice(0,20);if(!name)return'Enter a name';if(REG.order.some(i=>i!==id&&REG.profiles[i].name.toLowerCase()==name.toLowerCase()))return'That name is already used';
+ REG.profiles[id].name=name;if(AV.includes(av))REG.profiles[id].avatar=av;saveReg();if(id===ACT)S.name=name;return''}
+function delProfile(id){if(REG.order.length<2||!REG.profiles[id])return false;
+ lsSet('dsa-grind-trash',JSON.stringify({t:now().toISOString(),id,profile:REG.profiles[id],progress:id===ACT?JSON.stringify(S):lsGet(PK+id)}));
+ try{localStorage.removeItem(PK+id);localStorage.removeItem(PK+id+'-bk')}catch(e){}
+ delete REG.profiles[id];REG.order=REG.order.filter(x=>x!==id);if(REG.last===id)REG.last=null;
+ if(ACT===id){ACT=null;KEY=null;S=fresh();try{sessionStorage.removeItem('dsa-active')}catch(e){}}saveReg();return true}
+function exportAll(){flush();return{app:'dsa-grind',v:3,exported:now().toISOString(),last:REG.last,profiles:REG.order.map(id=>{let pr=null;try{pr=JSON.parse(lsGet(PK+id))}catch(e){}
+ const q=REG.profiles[id];return{id,name:q.name,avatar:q.avatar,created:q.created,progress:pr||fresh()}})}}
+function importAll(j){if(!j||!Array.isArray(j.profiles)||j.profiles.length<1||j.profiles.length>5)return false;
+ if(!j.profiles.every(q=>q&&q.name&&q.progress&&typeof q.progress.tasks=='object'&&typeof q.progress.done=='object'))return false;
+ lsSet('dsa-grind-prebackup',JSON.stringify(exportAll()));
+ REG.order.forEach(id=>{try{localStorage.removeItem(PK+id)}catch(e){}});
+ const r={v:1,last:null,order:[],profiles:{}};
+ j.profiles.forEach(q=>{let id=/^[\w-]{1,24}$/.test(q.id||'')&&!r.profiles[q.id]?q.id:'p'+Math.random().toString(36).slice(2,8);
+  r.order.push(id);r.profiles[id]={name:String(q.name).slice(0,20),avatar:AV.includes(q.avatar)?q.avatar:AV[0],created:q.created||now().toISOString()};lsSet(PK+id,JSON.stringify(Object.assign(fresh(),q.progress,{name:r.profiles[id].name})))});
+ REG=r;if(j.last&&r.profiles[j.last])REG.last=j.last;saveReg();ACT=null;KEY=null;S=fresh();try{sessionStorage.removeItem('dsa-active')}catch(e){}return true}
+function pStat(id){let o=null;try{o=id===ACT?S:JSON.parse(lsGet(PK+id))}catch(e){}o=o||{};const d=Object.keys(o.done||{}).length;let c=1;while(c<100&&(o.done||{})[c])c++;return d?`Day ${c} · ${d}/100 days`:'Day 1 · fresh start'}
+V.profiles=()=>{const r=REG,n=r.order.length,last=r.last&&r.profiles[r.last];
+ return `<div class="pf fade"><button class="snd" data-a="snd" style="z-index:5">${soundOn()?'🔊':'🔇'}</button><div class="brand" style="text-align:center">DSA GRIND 🔥</div>${last?`<div class="sub" style="text-align:center;margin-top:10px">WELCOME BACK<br><b style="color:var(--n);font-size:18px">${esc(last.name.toUpperCase())}</b></div>`:''}<h1>WHO'S GRINDING TODAY?</h1><p class="sub" style="text-align:center;margin:0">Choose your profile to continue your DSA journey.</p>
+ <div class="pgrid">${r.order.map(id=>{const q=r.profiles[id],i=pInfo(id);return `<button class="pc ${id===r.last?'last':''}" data-a="pick" data-id="${id}" style="--h:${hue(id)};--h2:${(hue(id)+60)%360}"><span class="rg" style="--p:${i.p}"><span class="pa">${q.avatar}</span></span><b>${esc(q.name.toUpperCase())}</b><small>DAY ${i.day}</small><small>${i.p}% COMPLETE</small></button>`}).join('')}${n<5?'<button class="pc add" data-a="padd"><span class="pa">＋</span><b>ADD PROFILE</b></button>':''}</div>
+ <div class="sub" style="text-align:center;margin:16px">${n}/5 profiles</div><button class="btn sm" data-a="pmanage">👥 Manage Profiles</button></div>`};
+const RM=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}};
+// ---- sound: original Web Audio synth, no assets; only plays once the browser allows audio (after first tap) ----
+let AC=null;const soundOn=()=>lsGet('dsa-grind-sound')!=='off';
+function ac(){try{if(!AC){const C=globalThis.AudioContext||globalThis.webkitAudioContext;if(!C)return null;AC=new C()}if(AC.state==='suspended'){const r=AC.resume();if(r&&r.catch)r.catch(()=>{})}return AC}catch(e){return null}}
+function note(f,t0,d,type,v,f2){const a=AC,T=a.currentTime+t0,o=a.createOscillator(),g=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,T);if(f2)o.frequency.exponentialRampToValueAtTime(f2,T+d);g.gain.setValueAtTime(0.0001,T);g.gain.linearRampToValueAtTime(v||.04,T+.02);g.gain.exponentialRampToValueAtTime(0.0001,T+d);o.connect(g);g.connect(a.destination);o.start(T);o.stop(T+d+.05)}
+const SFX={start:()=>{note(110,0,1,'sine',.05,220);note(330,.1,.9,'triangle',.025,660);note(660,.35,.8,'sine',.02,990)},pick:()=>{note(520,0,.12,'sine',.04,780)},enter:()=>{note(392,0,.18,'sine',.04);note(587,.1,.3,'triangle',.035)},
+ day:()=>[523,659,784,1047].forEach((f,i)=>note(f,i*.09,.35,'triangle',.04)),badge:()=>{note(880,0,.4,'sine',.04);note(1320,.12,.5,'sine',.03);note(1760,.24,.6,'sine',.02)},
+ hundred:()=>{[392,523,659,784,1047,1319].forEach((f,i)=>note(f,i*.12,.7,'triangle',.045));note(196,0,1.6,'sine',.05)}};
+function play(n){if(!soundOn())return;const a=ac();if(!a||a.state!=='running')return;try{SFX[n]()}catch(e){}}
+// ---- toasts (achievement popups) ----
+const TQ=[];let TB=false;
+function toast(h,ms){TQ.push([h,ms||3800]);if(!TB)nextToast()}
+function nextToast(){const q=TQ.shift();if(!q){TB=false;return}TB=true;const o=document.createElement('div');o.className='toast';o.innerHTML=q[0];document.body.appendChild(o);setTimeout(()=>{o.classList&&o.classList.add('out')},q[1]-400);setTimeout(()=>{o.remove();nextToast()},q[1])}
+function badgeToasts(nu){nu.forEach(b=>{const x=BD.find(y=>y[1]==b);if(x){play('badge');toast(`<div class="tk">🏆 ACHIEVEMENT UNLOCKED</div><b style="font-size:18px">${x[0]} "${esc(x[1])}"</b><div class="sub">${esc(x[2])}</div><button class="btn sm" data-a="vach">VIEW ACHIEVEMENTS</button>`)}})}
+// ---- intro ----
+let INTRO=null;
+function endIntro(){const o=INTRO;if(!o)return;INTRO=null;if(o.classList)o.classList.add('out');setTimeout(()=>o.remove(),420);try{sessionStorage.setItem('dsa-intro','1')}catch(e){}lsSet('dsa-intro-seen','1')}
+function intro(){let ss=null;try{ss=sessionStorage.getItem('dsa-intro')}catch(e){}if(ss||view=='verify')return;const first=!lsGet('dsa-intro-seen'),ms=RM()?700:first?2300:1100;globalThis.__introMs=ms;
+ const o=document.createElement('div');o.id='intro';let ps='';for(let i=0;i<16;i++)ps+=`<i style="--x:${Math.round(10+Math.random()*80)}%;--y:${Math.round(35+Math.random()*30)}%;animation-delay:${(Math.random()*1.4).toFixed(2)}s"></i>`;
+ o.innerHTML=`<div class="ip">${ps}</div><div class="il">DSA GRIND</div><div class="isub">100 DAYS · ONE GOAL</div><button class="snd" data-a="snd">${soundOn()?'🔊':'🔇'}</button><button class="skip" data-a="skip">Skip ▸</button>`;
+ document.body.appendChild(o);INTRO=o;play('start');setTimeout(endIntro,ms)}
+// ---- profile enter + welcome ----
+let ENT=false,WT=0;
+function pInfo(id){let o=null;try{o=id===ACT?S:JSON.parse(lsGet(PK+id))}catch(e){}o=o||{};const done=o.done||{},tk=o.tasks||{},cu=o.custom||{};let c=0,t=0;
+ for(let n=1;n<=100;n++){const ids=[];for(let k=0;k<6;k++)ids.push(n+':s'+k);if(D[n-1].a==0)for(let k=0;k<5;k++)ids.push(n+':q'+k);(cu[n]||[]).forEach((x,k)=>ids.push(n+':c'+k));t+=ids.length;ids.forEach(i=>{if(tk[i])c++})}
+ let cur=1;while(cur<100&&done[cur])cur++;return{day:cur,p:Math.round(100*c/t),d:Object.keys(done).length}}
+function enter(id,anim){ENT=true;play('pick');
+ const fin=()=>{if(id!==ACT)loadProfile(id);closeOv();ENT=false;go('home');showWelcome()};
+ if(anim){document.querySelectorAll('.pc').forEach(e=>e.classList&&e.classList.add(e.dataset.id===id?'sel':'dim'));const pf=document.querySelector('.pf');if(pf&&pf.classList)pf.classList.add('entering');setTimeout(fin,RM()?120:700)}else fin()}
+function showWelcome(){const nw=Object.keys(S.tasks).filter(k=>S.tasks[k]).length===0&&!doneN().length,c=firstOpen(),st=streak(),o=document.createElement('div');o.className='wel';o.style.cssText='--h:'+hue(ACT||'p1');
+ o.innerHTML=`<div class="cc"><span class="pa big">${esc(curAv())}</span><div class="w1">${nw?'WELCOME TO DSA GRIND':'WELCOME BACK,'}</div><div class="w2">${esc(S.name.toUpperCase())}</div><div class="w3">${nw?'YOUR 100-DAY JOURNEY STARTS NOW.':'DAY '+c+' IS READY.'}</div>${nw?'':`<div class="w4">${st.n?'🔥 '+st.n+' DAY STREAK · ':''}YOUR GRIND CONTINUES.</div>`}<button class="btn go" data-a="wcont" data-n="${nw?1:0}">${nw?'START DAY 1':'CONTINUE'}</button>${nw?'':'<div class="wbar"><i></i></div>'}</div>`;
+ document.body.appendChild(o);play('enter');if(!nw)WT=setTimeout(dismissWelcome,RM()?1200:3200)}
+function dismissWelcome(){clearTimeout(WT);document.querySelectorAll('.wel').forEach(x=>{x.classList&&x.classList.add('out');setTimeout(()=>x.remove(),350)})}
+// ---- celebrations ----
+function celebrate(n,nu,s){const o=document.createElement('div'),p=all().p;o.className='cel';
+ o.innerHTML=`<div class="cc"><svg class="ck" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg><div class="c1">DAY ${n}<br>COMPLETED ✓</div><div class="c2 sub">${dmsg(n).split('\n').slice(1).map(esc).join('<br>')}</div><div class="c3">+1 DAY<br><b>STREAK: ${s.n} DAY${s.n>1?'S':''} 🔥</b></div><div class="bar"><i id="cbar" style="width:0%"></i></div><div class="sub" style="margin-top:6px">OVERALL ${p}%</div><div class="c4">NEXT: DAY ${n+1}</div><button class="btn go" data-a="ccont" data-n="${n+1}">CONTINUE TO DAY ${n+1}</button></div>`;
+ document.body.appendChild(o);play('day');confetti();setTimeout(()=>{const b=o.querySelector&&o.querySelector('#cbar');if(b)b.style.width=p+'%'},400);setTimeout(()=>badgeToasts(nu),1800)}
+function hundred(nu){const o=document.createElement('div'),nm=esc(S.name.toUpperCase());o.className='cel hun';
+ o.innerHTML=`<div class="cc s1"><svg class="ck" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg><div class="c1">DAY 100<br>COMPLETED ✓</div><div class="bar"><i style="width:100%;animation:fillup 2s"></i></div><div class="sub" style="margin-top:6px">100%</div></div><div class="cc s2"><div style="font-size:60px">🎓</div><div class="c1" style="animation:none">CONGRATULATIONS,<br>${nm}</div><div class="c3" style="animation:none"><b>100 DAYS COMPLETE.</b></div><div class="c4" style="animation:none">JAVA + DSA JOURNEY<br>COMPLETED ✓</div><div class="sub">YOUR CERTIFICATE IS READY</div><button class="btn go" data-a="vcert" style="animation:none">VIEW CERTIFICATE</button></div>`;
+ document.body.appendChild(o);play('hundred');confetti();setTimeout(confetti,1200);setTimeout(confetti,2600);setTimeout(()=>badgeToasts(nu),3400)}
+function closeOv(){document.querySelectorAll('.ov,.cel,.wel').forEach(o=>o.remove())}
+function pform(id){const p=id?REG.profiles[id]:null;return `<h3>${id?'Edit Profile':'Create Profile'}</h3><input type="text" id="pn" maxlength="20" placeholder="Name" value="${p?esc(p.name):''}" style="margin-top:12px"><div class="sub" style="margin-top:8px">Choose avatar</div><div class="avg">${AV.map(a=>`<label class="av"><input type="radio" name="av" value="${a}" ${(p?p.avatar:AV[0])==a?'checked':''}><span>${a}</span></label>`).join('')}</div><div id="perr" class="sub" style="color:#ff6b81;min-height:18px"></div><button class="btn go" data-a="${id?'psave':'pcreate'}" data-id="${id||''}">${id?'SAVE':'CREATE PROFILE'}</button><button class="btn sm" data-a="close">Cancel</button>`}
+REG=loadReg();
+const selAv=()=>(document.querySelector('input[name=av]:checked')||{}).value;
 function modal(h){const o=document.createElement('div');o.className='ov';o.innerHTML='<div class="card fade">'+h+'</div>';o.onclick=e=>{if(e.target==o||e.target.dataset.a=='close')o.remove()};document.body.appendChild(o);return o}
-function confetti(){const c=['#22e6ff','#a56bff','#3dff9a','#ffd24a','#ff8a3d'];for(let i=0;i<45;i++){const e=document.createElement('div');e.className='cf';e.style.left=Math.random()*100+'vw';e.style.background=c[i%5];e.style.animationDelay=Math.random()*.6+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3400)}}
-function complete(n){if(!tasks(n).every(x=>S.tasks[x.id])){modal('<h3>Not yet 💪</h3><p class="sub">Tick every task first.</p><button class="btn" data-a="close">OK</button>');return}
+function confetti(){if(RM())return;const c=['#22e6ff','#a56bff','#3dff9a','#ffd24a','#ff8a3d'];for(let i=0;i<45;i++){const e=document.createElement('div');e.className='cf';e.style.left=Math.random()*100+'vw';e.style.background=c[i%5];e.style.animationDelay=Math.random()*.6+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3400)}}
+function complete(n){if(S.done[n]){go('day',String(Math.min(100,n+1)));return}if(!tasks(n).every(x=>S.tasks[x.id])){modal('<h3>Not yet 💪</h3><p class="sub">Tick every task first.</p><button class="btn" data-a="close">OK</button>');return}
  if(!S.done[n]){S.done[n]=dstr(now())}S.cur=firstOpen();
- const nu=unlocked().filter(b=>!S.badges.includes(b));S.badges=unlocked();ensureCert();save();render();confetti();const s=streak();if(doneN().length==100){go('cert');return}
- modal(`<h2>DAY ${n} COMPLETED ✓</h2><p style="white-space:pre-line">${dmsg(n)}</p><p><b>🔥 ${s.n} DAY STREAK${s.n>1?'!':''}</b><br>Overall: ${all().p}% · ${doneN().length}/100 days${n<100?' · Next: Day '+(n+1):''}</p>${nu.map(b=>{const x=BD.find(y=>y[1]==b);return `<div class="badge on"><em>${x[0]}</em><div><b>BADGE UNLOCKED</b><div>${x[1]}</div></div></div>`}).join('')}${n<100?`<button class="btn go" data-a="go" data-v="day" data-n="${n+1}">CONTINUE TO DAY ${n+1} →</button>`:''}<button class="btn sm" data-a="close">Close</button>`)}
+ if(!S.seen||(!S.seen.length&&S.badges.length))S.seen=S.badges.slice();const nu=unlocked().filter(b=>!S.seen.includes(b));S.seen=S.seen.concat(nu);S.badges=unlocked();ensureCert();save();render();const s=streak();if(doneN().length==100){hundred(nu);return}
+ celebrate(n,nu,s)}
 function onClick(e){const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,n=+t.dataset.n;
  if(a=='go'){e.preventDefault();document.querySelectorAll('.ov').forEach(o=>o.remove());go(t.dataset.v,t.dataset.n)}
  else if(a=='tick'){S.tasks[t.dataset.id]=t.checked;const dn=+t.dataset.id.split(':')[0];if(!t.checked&&S.done[dn])delete S.done[dn];S.cur=firstOpen();S.badges=unlocked();save();render()}
  else if(a=='addq'){const q=$('#cq').value.trim();if(!q)return;(S.custom[n]=S.custom[n]||[]).push({t:q,u:$('#cu').value.trim()});save();render()}
  else if(a=='delq'){e.preventDefault();e.stopPropagation();S.custom[n].splice(+t.dataset.i,1);Object.keys(S.tasks).filter(k=>k.startsWith(n+':c')).forEach(k=>delete S.tasks[k]);save();render()}
  else if(a=='complete')complete(n);
- else if(a=='exp')modal(`<h3>Export</h3><p class="sub">Copy this JSON and keep it safe.</p><textarea id="ex" readonly>${esc(JSON.stringify(S))}</textarea><button class="btn go" data-a="dl">⬇ Download file</button><button class="btn" data-a="copy">Copy</button><button class="btn sm" data-a="close">Close</button>`)
+ else if(a=='exp')modal(`<h3>Export</h3><p class="sub">Includes ALL profiles. Copy this JSON and keep it safe.</p><textarea id="ex" readonly>${esc(JSON.stringify(exportAll()))}</textarea><button class="btn go" data-a="dl">⬇ Download file</button><button class="btn" data-a="copy">Copy</button><button class="btn sm" data-a="close">Close</button>`)
  else if(a=='copy'){const x=$('#ex');x.select();try{navigator.clipboard.writeText(x.value)}catch(_){document.execCommand('copy')}t.textContent='Copied ✓'}
- else if(a=='imp')modal(`<h3>Import</h3><p class="sub">Paste exported JSON. This replaces current data.</p><input type="file" id="imf" accept=".json,application/json"><textarea id="im" placeholder="…or paste JSON here"></textarea><button class="btn go" data-a="doimp">Import</button><button class="btn sm" data-a="close">Cancel</button>`)
- else if(a=='doimp'){try{const j=JSON.parse($('#im').value);if(!j.tasks||!j.done)throw 0;S=Object.assign(fresh(),j);S.cur=firstOpen();save();document.querySelector('.ov').remove();render()}catch(_){t.textContent='Invalid JSON ✗'}}
- else if(a=='reset')modal(`<h3>Are you sure?</h3><p class="sub">This will erase your 100-day progress, notes and achievements.</p><div class="row"><button class="btn" data-a="close">Cancel</button><button class="btn" style="border-color:#ff4d6d;background:#ff4d6d33" data-a="doreset">Reset Everything</button></div>`)
- else if(a=='dl')save2(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}),'dsa-grind-progress-'+dstr(now())+'.json')
+ else if(a=='imp')modal(`<h3>Import</h3><p class="sub">Paste an exported backup. An all-profiles backup replaces ALL profiles (a safety copy is kept first).</p><input type="file" id="imf" accept=".json,application/json"><textarea id="im" placeholder="…or paste JSON here"></textarea><button class="btn go" data-a="doimp">Import</button><button class="btn sm" data-a="close">Cancel</button>`)
+ else if(a=='doimp'){try{const j=JSON.parse($('#im').value);if(j&&j.profiles){if(!importAll(j))throw 0;closeOv();go('profiles')}else{if(!j.tasks||!j.done||!KEY)throw 0;S=Object.assign(fresh(),j);S.name=curName();S.cur=firstOpen();save();closeOv();render()}}catch(_){t.textContent='Invalid JSON ✗'}}
+ else if(a=='reset')modal(`<h3>Are you sure?</h3><p class="sub">This will erase your 100-day progress, notes and achievements for this profile only.</p><div class="row"><button class="btn" data-a="close">Cancel</button><button class="btn" style="border-color:#ff4d6d;background:#ff4d6d33" data-a="doreset">Reset Everything</button></div>`)
+ else if(a=='dl')save2(new Blob([JSON.stringify(exportAll(),null,1)],{type:'application/json'}),'dsa-grind-progress-'+dstr(now())+'.json')
  else if(a=='bk'){autoBackup(true);t.textContent='Backed up ✓'}
  else if(a=='rs'){let b=[];try{b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]')}catch(_){}modal('<h3>Restore backup</h3><p class="sub">Current progress is backed up first.</p>'+(b.map((x,i)=>`<button class="btn sm" data-a="dors" data-i="${i}">${new Date(x.t).toLocaleString()}</button>`).join('')||'<p class="sub">No backups yet.</p>')+'<button class="btn sm" data-a="close">Close</button>')}
- else if(a=='dors'){const b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]'),d=b[+t.dataset.i].d;autoBackup(true);S=Object.assign(fresh(),JSON.parse(d));S.cur=firstOpen();save();document.querySelector('.ov').remove();render()}
+ else if(a=='dors'){const b=JSON.parse(localStorage.getItem(KEY+'-bk')||'[]'),d=b[+t.dataset.i].d;autoBackup(true);S=Object.assign(fresh(),JSON.parse(d));S.name=curName();S.cur=firstOpen();save();document.querySelector('.ov').remove();render()}
  else if(a=='dlcert')dlCert()
+ else if(a=='pick'){const id=t.dataset.id;if(!REG.profiles[id]||ENT)return;enter(id,view=='profiles')}
+ else if(a=='skip')endIntro()
+ else if(a=='snd'){lsSet('dsa-grind-sound',soundOn()?'off':'on');if(soundOn())play('pick');if(view=='settings'||view=='profiles')render();document.querySelectorAll('#intro .snd').forEach(x=>x.textContent=soundOn()?'🔊':'🔇')}
+ else if(a=='wcont'){dismissWelcome();if(n)go('day','1')}
+ else if(a=='ccont'){closeOv();go('day',String(n))}
+ else if(a=='vcert'){closeOv();go('cert')}
+ else if(a=='vach'){closeOv();go('ach')}
+ else if(a=='pmenu'){closeOv();modal('<h3>Switch Profile</h3>'+REG.order.map(id=>`<button class="btn sm ${id===ACT?'go':''}" data-a="pick" data-id="${id}">${REG.profiles[id].avatar} ${esc(REG.profiles[id].name.toUpperCase())}${id===ACT?' ✓':''}</button>`).join('')+(REG.order.length<5?'<button class="btn sm" data-a="padd">＋ Add Profile</button>':'<div class="sub">5/5 profiles</div>')+'<button class="btn sm" data-a="pmanage">👥 Manage Profiles</button><button class="btn sm" data-a="pscreen">🏠 Profile screen</button><button class="btn sm" data-a="close">Close</button>')}
+ else if(a=='pscreen'){closeOv();leaveProfile();go('profiles')}
+ else if(a=='padd'){if(REG.order.length>=5)return;closeOv();modal(pform())}
+ else if(a=='pcreate'){const r=createProfile($('#pn').value,selAv());if(r.err){$('#perr').textContent=r.err;return}closeOv();
+  if(ACT){modal(`<h3>✓ Profile created</h3><p>${esc(REG.profiles[r.id].name)} starts fresh on Day 1.</p><button class="btn go" data-a="pick" data-id="${r.id}">Switch to ${esc(REG.profiles[r.id].name)}</button><button class="btn sm" data-a="close">Stay here</button>`)}else render()}
+ else if(a=='pedit'){closeOv();modal(pform(t.dataset.id))}
+ else if(a=='psave'){const e=editProfile(t.dataset.id,$('#pn').value,selAv());if(e){$('#perr').textContent=e;return}closeOv();render()}
+ else if(a=='pmanage'){closeOv();modal('<h3>Manage Profiles</h3>'+REG.order.map(id=>`<div class="row" style="align-items:center;margin:10px 0"><div style="flex:2;text-align:left">${REG.profiles[id].avatar} <b>${esc(REG.profiles[id].name)}</b></div><button class="btn sm" style="margin:0" data-a="pedit" data-id="${id}">Edit</button><button class="btn sm" style="margin:0;border-color:#ff4d6d" data-a="pdel" data-id="${id}">Delete</button></div>`).join('')+'<button class="btn sm" data-a="close">Close</button>')}
+ else if(a=='pdel'){const id=t.dataset.id;closeOv();modal(`<h3>Delete ${esc(REG.profiles[id].name)}?</h3><p>Delete this profile and all of its DSA progress?</p>${id=='p1'?'<p class="sub">This is your original profile. Type DELETE to confirm.</p><input type="text" id="pdc" placeholder="DELETE">':''}<div class="row"><button class="btn" data-a="close">CANCEL</button><button class="btn" style="border-color:#ff4d6d;background:#ff4d6d33" data-a="pdodel" data-id="${id}">DELETE</button></div>`)}
+ else if(a=='pdodel'){const id=t.dataset.id;if(id=='p1'&&($('#pdc').value||'').trim()!=='DELETE'){t.textContent='Type DELETE first';return}
+  if(!delProfile(id)){closeOv();modal('<h3>Keep at least one profile</h3><button class="btn" data-a="close">OK</button>');return}closeOv();if(!ACT)go('profiles');else render()}
  else if(a=='print')window.print()
- else if(a=='doreset'){autoBackup(true);S=fresh();save();document.querySelector('.ov').remove();go('home')}}
+ else if(a=='doreset'){autoBackup(true);S=fresh();S.name=curName();save();document.querySelector('.ov').remove();go('home')}}
 function onInput(e){const t=e.target,n=t.dataset.n;
  if(t.dataset.f){S.notes[n]=S.notes[n]||{};if(t.dataset.f=='imp')S.notes[n].imp=t.checked;else S.notes[n][t.dataset.f]=t.value;save()}
  else if(t.id=='nm'){S.name=t.value.trim()||'Vishwas';save()}
  else if(t.id=='q'||t.id=='rq'){const k=t.id=='q'?'sq':'rq',p=t.selectionStart;S[k]=t.value;save();render();const i=$('#'+t.id);i.focus();i.setSelectionRange(p,p)}}
-if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('click',onClick);document.addEventListener('input',onInput);
+if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('pointerdown',()=>{if(soundOn())ac()},{passive:true});document.addEventListener('click',onClick);document.addEventListener('input',onInput);
  document.addEventListener('change',e=>{if(e.target.id=='imf'){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('#im').value=r.result};r.readAsText(f)}});
- (function(){const h=location.hash.slice(1),i=h.indexOf('/'),v=i<0?h:h.slice(0,i);if(V[v]&&(v!='cert'||S.cert)){view=v;arg=i<0?null:h.slice(i+1)}render();
+ (function(){const h=location.hash.slice(1),i=h.indexOf('/'),v=i<0?h:h.slice(0,i);let sa=null;try{sa=sessionStorage.getItem('dsa-active')}catch(e){}
+  if(v=='verify'){view=v;arg=h.slice(i+1)}
+  else if(sa&&REG.profiles[sa]){loadProfile(sa);view='home';if(V[v]&&v!='profiles'&&v!='verify'&&(v!='cert'||S.cert)){view=v;arg=i<0?null:h.slice(i+1)}}
+  else view='profiles';
+  render();intro();
   try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
-  if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{})})()}
+  if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{})})()}
 </script></body></html>
