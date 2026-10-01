@@ -33,3 +33,9 @@ Static site, no build step. Files: index.html, manifest.json, sw.js, icon-*.png,
 - Spoken welcome uses the browser's SpeechSynthesis after a profile tap, once per selection. Toggle with the 🗣 button; stored as `dsa-grind-voice` (sound is `dsa-grind-sound`; both are separate from progress).
 - The original profile is displayed as "Vishwas K" (one-time rename in the profile registry; progress data is not touched).
 - Replace files in your repo root and push; Vercel redeploys. No build step, same architecture.
+
+## v6 (final cinematic pass)
+- Intro: ~6.8 s on first launch (dark ambience -> energy streak -> DSA GRIND emerges blurred->sharp with light rays -> pulse + light sweep -> subtitle -> fade to profiles). Repeat launches play it 1.8x faster (~4.2 s). Skip: button / Esc / Enter / Space (~0.4 s). Reduce Motion: ~1 s fade.
+- Intro score is synthesised (Web Audio) on the same timeline: ambience, rising tone, whoosh + swell, sub impact at ~3.5 s, shimmer, fade. Plays only once the browser allows audio.
+- Spoken welcome: "Welcome back, <Name>. Your DSA Grind continues. Day <N> is ready." / new profile: "Welcome to DSA Grind, <Name>. Your 100-day journey starts now." Name and day are read from the selected profile. Male English voice is chosen by scoring available voices (no hard-coded name); rate 0.92, pitch 0.82.
+- Welcome screen has 🔊 VOICE ON/OFF and ▶ TEST VOICE ("Welcome back, <Name>."). The spoken sentence is also shown as a caption.
